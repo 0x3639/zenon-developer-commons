@@ -1,5 +1,7 @@
 # Zenon Developer Commons – Documentation Index
 
+> For a complete map of all documentation, see [SUMMARY.md](SUMMARY.md).
+
 This directory contains all structured technical documents for the Zenon ecosystem:
 
 - **Architecture** — Deep dives into how the Network of Momentum works internally.
