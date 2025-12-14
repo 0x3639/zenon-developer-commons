@@ -1,8 +1,10 @@
 # Bitcoin SPV Feasibility (Notes)
 
-This note sketches why Bitcoin transaction verification via SPV is *cryptographically possible* within Zenon’s ledger model.
+This note sketches why Bitcoin transaction verification via SPV is *cryptographically possible* within Zenon's ledger model.
 
-This is not a proposal, roadmap, or implementation claim.
+Zenon could consume Bitcoin as a unilateral fact oracle: verifying external consensus outputs (finality, ordering, cost) without executing Bitcoin or coordinating bidirectionally.
+
+This demonstrates mathematical feasibility only and is not current functionality, active development, or a implementation commitment.
 
 ---
 
