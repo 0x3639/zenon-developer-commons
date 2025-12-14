@@ -25,6 +25,8 @@
 
 ## Research
 - [Research Index](research/README.md)
+- [Bitcoin SPV feasibility on Zenon]
+(research/bitcoin_spv_zenon_research.pdf)
 
 ## Proposals
 - [Proposals Index](proposals/README.md)
