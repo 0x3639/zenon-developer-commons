@@ -26,6 +26,8 @@
 ## Research
 - [Research Index](research/README.md)
 - [Bitcoin SPV on Zenon — Research Blueprint](research/bitcoin_spv_zenon_research.pdf)
+- [Transaction Admission Control](research/transaction-admission-control.md)
+
 
 ## Proposals
 - [Proposals Index](proposals/README.md)
