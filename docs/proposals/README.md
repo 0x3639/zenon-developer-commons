@@ -12,3 +12,9 @@ A proposal may include:
 - Documentation initiatives
 
 Proposals do not represent decisions — they are starting points for discussion.
+
+---
+
+## Index
+
+- [TmZ-001: Documentation Formatting Standards](TmZ-001-formatting-standards.md)

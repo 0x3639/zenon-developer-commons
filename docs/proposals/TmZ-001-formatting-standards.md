@@ -1,6 +1,6 @@
-# Proposal: Documentation Formatting Standards
+# TmZ-001: Documentation Formatting Standards
 
-This document proposes a consistent formatting structure for all markdown documents in the Zenon Developer Commons repository.
+This document proposes a consistent formatting structure for all markdown documents in the Zenon Developer Commons repository. This proposal is meant to serve as a guide rather than a rigid requirement.  
 
 ---
 
@@ -265,17 +265,11 @@ tags:
 
 ## Open Questions
 
-1. **Numbered sections**: Should we require numbered sections (1, 1.1, 1.2) or allow unnumbered?
+1. **Front matter**: Should we adopt YAML front matter (see above), or keep it simple?
 
-2. **Subtitle format**: Is "Research Note — Descriptor" the right pattern, or should we use something else?
+2. **Document categories**: Should we define document types (Research Note, Draft, Proposal, Specification)?
 
-3. **Section separators**: Are `---` between all major sections too heavy, or just right?
-
-4. **Front matter**: Should we adopt YAML front matter (see above), or keep it simple?
-
-5. **Document categories**: Should we define document types (Research Note, Draft, Proposal, Specification)?
-
-6. **Status tracking**: How should we indicate document maturity (draft, stable, deprecated)?
+3. **Status tracking**: How should we indicate document maturity (draft, stable, deprecated)?
 
 ---
 
@@ -285,7 +279,6 @@ If accepted, this standard would apply to:
 
 - All new documents
 - Existing documents (reformatted incrementally)
-- CLAUDE.md (local guidance for AI assistants)
 
 ---
 
