@@ -5,6 +5,8 @@
 A public, community-driven space for exploring and documenting the technical
 architecture of **Zenon — The Network of Momentum (NoM)**.
 
+Before using these models, read docs/architecture/bounded-verification-boundaries.md
+
 [![Research](https://img.shields.io/badge/Focus-Research-blue)]()
 [![Architecture](https://img.shields.io/badge/Topic-Architecture-green)]()
 [![Light Client](https://img.shields.io/badge/Topic-Browser--Light--Client-orange)]()
