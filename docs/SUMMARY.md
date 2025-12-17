@@ -23,6 +23,7 @@
 - [Minimal Sentry Node](notes/minimal-sentry-node.md)
 - [Browser Light Client](notes/browser-light-client.md)
 - [Bitcoin SPV Feasibility](notes/bitcoin-spv-feasibility.md)
+- [HTLCs, PTLCs, and Bounded Inclusion](notes/htlc_ptlc_and_bounded_inclusion_comparison.md)
 - [Browser Light Client (Extended)](notes/browser-light-client/README.md)
 - [Minimal Sentry Node (Extended)](notes/minimal-sentry-node/README.md)
 - [SPV Light Verification (Extended)](notes/spv-light-verification/README.md)
