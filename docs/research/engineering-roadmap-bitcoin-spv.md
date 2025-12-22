@@ -72,22 +72,26 @@ Where:
 The verification function $V(\pi, z) \to \{0,1\}$ evaluates true iff all conditions hold:
 
 - **PoW Validity**
+
 $$
 \mathrm{SHA256}^2(H_i) \le T_i
 $$
 
 - **Maximal Chainwork**
+
 $$
 W_i = \left\lfloor \frac{2^{256}}{T_i + 1} \right\rfloor,\quad
 W_{\text{chain}} = \sum_i W_i
 $$
 
 - **Merkle Inclusion**
+
 $$
 \mathrm{MerkleRoot}(tx,\text{branch}) = R(H_b)
 $$
 
 - **Confirmation Depth**
+
 $$
 n - b \ge z
 $$
@@ -146,9 +150,11 @@ Verification cost is paid by the invoking account using existing resource mechan
 
 **Resource Bounds:**  
 To prevent abuse:
+
 $$
 C(\pi) \approx 2h + k \le C_{\max}
 $$
+
 where $h$ is header count and $k$ is Merkle branch length.
 
 **Outcome:**  
@@ -163,6 +169,7 @@ Mitigate header availability and eclipse risks.
 
 **Option A — Threshold Relaying:**  
 Accept a header tip $\hat{t}$ only if observed from at least $k$ independent sources:
+
 $$
 | \{s_j : \mathrm{tip}(s_j)=\hat{t}\} | \ge k
 $$
