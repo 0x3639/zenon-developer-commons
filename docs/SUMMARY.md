@@ -64,4 +64,5 @@
 ## Proposals
 - [Proposals Index](proposals/README.md)
 - [TmZ-001: Documentation Formatting Standards](proposals/TmZ-001-formatting-standards.md)
+- [TmZ-002: SEO and AI Agent Improvements](proposals/TmZ-002-seo-improvements.md)
 - [AZ Research Proposal (On-Chain)](az/README.md)
