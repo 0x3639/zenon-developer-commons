@@ -48,6 +48,7 @@ The act of a light client resuming verification after an unbounded period of dis
 3. Threat Model
 
 This specification assumes the following adversarial conditions:
+
 	•	Peers may be malicious or colluding
 	•	Network connectivity may be intermittent or unavailable
 	•	The system may experience partial or full downtime
@@ -64,10 +65,13 @@ The specification assumes no trusted bootstrap servers and no socially trusted g
 4. Assumptions
 
 GALV relies on the following minimal assumptions:
+
 	1.	Hash Collision Resistance
 Cryptographic hash functions used for commitments are collision-resistant.
+
 	2.	External Anchor Immutability
 Rewriting the external anchor requires computational resources exceeding feasible adversarial capacity.
+
 	3.	Deterministic State Derivation
 Valid system states are deterministically derived from genesis via cryptographic parent commitments.
 
@@ -88,6 +92,7 @@ This invariant is the sole acceptance criterion defined by this specification.
 6. Required Inputs
 
 A conforming light client MUST possess or obtain the following:
+
 	•	The expected genesis hash
 	•	The external anchor reference committed to by genesis
 	•	A method to verify the existence and immutability of the external anchor
@@ -101,14 +106,19 @@ No full history, transaction data, or execution traces are required.
 7. Verification Algorithm (Normative)
 
 A light client SHALL perform verification as follows:
+
 	1.	Genesis Identity Check
 Verify that the presented genesis hash matches the expected genesis hash.
+
 	2.	Anchor Commitment Check
 Verify that genesis cryptographically commits to the specified external anchor.
+
 	3.	Anchor Verification
 Verify that the external anchor exists and is immutable under the assumed threat model.
+
 	4.	Frontier Ancestry Check
 Verify that each element of the proposed frontier cryptographically commits to its parent state(s).
+
 	5.	Lineage Termination Check
 Verify that all ancestry paths terminate at the verified genesis.
 
@@ -119,10 +129,13 @@ If any step fails, the light client MUST reject the proposed state.
 8. Security Guarantees
 
 If verification succeeds, GALV guarantees:
+
 	•	Origin Authenticity
 The accepted state descends from the same genesis previously observed.
+
 	•	Non-Rewindability
 The system’s origin cannot be backdated without rewriting the external anchor.
+
 	•	Resistance to Fabricated Histories
 Adversaries cannot present an alternate network instance with a different origin.
 
@@ -133,6 +146,7 @@ These guarantees hold regardless of offline duration.
 9. Non-Goals
 
 GALV explicitly does not guarantee:
+
 	•	Execution correctness
 	•	Consensus safety
 	•	Data availability
@@ -146,6 +160,7 @@ These properties are orthogonal and MUST be addressed by separate mechanisms.
 10. Applicability (Non-Normative)
 
 GALV is applicable to systems that satisfy:
+
 	•	Deterministic state derivation
 	•	Hash-based ancestry
 	•	Genesis anchoring to an immutable external reference
