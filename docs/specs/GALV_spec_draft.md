@@ -188,3 +188,5 @@ By converting genesis from an assumed constant into a cryptographically time-bou
 Status
 
 Specification Draft — Normative Core Complete
+
+For an explanation of how GALV composes with header-only verification, bounded inclusion, and minimal state frontier verification, see docs/architecture/galv-composition-with-bounded-verification.md
