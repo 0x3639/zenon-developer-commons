@@ -15,6 +15,10 @@ Before using these models, read docs/architecture/bounded-verification-boundarie
 **The full, structured Zenon architecture documentation is available here:**  
 👉 https://zenon-developer-commons.gitbook.io/zenon-developer-commons-docs
 
+### Context and Reading Guide
+
+docs/notes/genesis_anchoring_and_verification_context.md  
+***  Explains how the Bitcoin-anchored genesis reframes the verification model explored in this repository.
 ---
 
 ## What This Repository Is
