@@ -1,0 +1,67 @@
+/**
+ * Zenon Developer Commons — theme overrides.
+ */
+
+:root {
+  --ifm-color-primary: #0a7d4f;
+  --ifm-color-primary-dark: #097147;
+  --ifm-color-primary-darker: #086a43;
+  --ifm-color-primary-darkest: #075737;
+  --ifm-color-primary-light: #0b8957;
+  --ifm-color-primary-lighter: #0c905b;
+  --ifm-color-primary-lightest: #0ea36a;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #2fd693;
+  --ifm-color-primary-dark: #1fc985;
+  --ifm-color-primary-darker: #1dbe7e;
+  --ifm-color-primary-darkest: #189d68;
+  --ifm-color-primary-light: #46dca0;
+  --ifm-color-primary-lighter: #52dea7;
+  --ifm-color-primary-lightest: #76e5ba;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Persona cards on the homepage */
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.persona-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  color: inherit;
+}
+
+.persona-card h3 {
+  margin-top: 0;
+}
+
+.persona-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}

@@ -15,8 +15,23 @@ Before using these models, read docs/architecture/bounded-verification-boundarie
 [![Light Client](https://img.shields.io/badge/Topic-Browser--Light--Client-orange)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)]()
 
-**The full, structured Zenon architecture documentation is available here:**  
-👉 https://zenon-developer-commons.gitbook.io/zenon-developer-commons-docs
+**The full, structured documentation is published as a Docusaurus site.**
+
+The docs are organized around three reading paths — pick the one that fits you:
+
+- **[For Enthusiasts & Investors](docs/start-here/for-enthusiasts.md)** — narrative essays and plain-language overviews.
+- **[For Developers](docs/start-here/for-developers.md)** — architecture, specifications, and implementation guides.
+- **[For Researchers](docs/start-here/for-researchers.md)** — formal specs, core papers, and bounded-verification research.
+
+Underneath, content is grouped by topic (Concepts, Architecture, Light Clients, Bitcoin & SPV, zApps, Networking, Specifications, Research, Essays) with every paper available as a downloadable PDF in the [Papers catalog](docs/papers.md).
+
+### Run the docs locally
+
+```bash
+npm install
+npm run start      # live-reload dev server at http://localhost:3000
+npm run build      # production build into ./build
+```
 
 ## Status
 
@@ -128,7 +143,7 @@ You **do not** need to be an expert to participate.
 ## ░░ Initial Research Areas ░░
 
 ### **Featured Research**
-- [Browser-Native Light Client Overview](docs/research/browser-light-client-overview.md)
+- [Browser-Native Light Client Overview](docs/light-clients/overview.md)
 
 ---
 
@@ -192,9 +207,9 @@ This is a place for **collaboration**, not confrontation.
 
 ## ░░ Key Documents ░░
 
-- [Browser-Native Light Client Overview](docs/research/browser-light-client-overview.md)  
-- [Open Research Questions](docs/research/open-research-questions.md)  
-- [Architecture Overview](docs/architecture/architecture-overview.md)  
+- [Browser-Native Light Client Overview](docs/light-clients/overview.md)  
+- [Open Research Questions](docs/research/open-questions.md)  
+- [Architecture Overview](docs/architecture/overview.md)  
 
 ---
 
