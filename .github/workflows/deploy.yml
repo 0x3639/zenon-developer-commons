@@ -1,11 +1,11 @@
 name: Deploy Docusaurus to GitHub Pages
 
-# Deploys on push to `main`, or manually via the Actions tab.
-# NOTE: Pages must be enabled in repo Settings → Pages (Source: GitHub Actions)
-# before the first deploy will publish. Until then this workflow simply builds.
+# Deploys on push to `main` or `docusaurus-site`, or manually via the Actions tab.
+# NOTE: Pages must be enabled (Settings → Pages → Source: GitHub Actions) and the
+# branch must be allowed in the `github-pages` environment's deployment branches.
 on:
   push:
-    branches: [main]
+    branches: [main, docusaurus-site]
   workflow_dispatch:
 
 permissions:
