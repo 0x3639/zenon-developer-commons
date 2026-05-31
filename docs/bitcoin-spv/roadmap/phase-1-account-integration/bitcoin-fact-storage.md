@@ -409,5 +409,5 @@ for fact in facts:
 ## 14. References
 
 - [VerifyBitcoinSPV ACI Specification](verify-bitcoin-spv-aci.md)
-- [State Proof Bundles](/architecture/state-proof-bundles)
+- [State Proof Bundles](/light-clients/state-proof-bundles)
 - [Optimistic Bitcoin Fact Checkpointing](../phase-3-optimistic-layer/optimistic-btc-checkpointing.md)

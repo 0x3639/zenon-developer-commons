@@ -1,7 +1,7 @@
 # Zenon Purplepaper Series
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/purplepaper.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/purplepaper.pdf).
 :::
 
 # Economic and Interaction Consequences of Verification-First Architecture
@@ -127,7 +127,7 @@ Developer takeaway: Design proofs that remain verifiable for many peers, over wi
 Verification is feasible when:
 
 $$
-\Phi_ {V} (\pi) \equiv (| \pi | \leq B _ {V}) \wedge (\operatorname {C o s t} _ {C} (\pi) \leq C _ {V}) \wedge (\operatorname {C o s t} _ {S} (\pi) \leq S _ {V} ^ {\mathrm {a l l o c}})
+\Phi_ {V} (\pi) \equiv (| \pi | \leq B _ {V}) \wedge (\operatorname{Cost} _ {C} (\pi) \leq C _ {V}) \wedge (\operatorname{Cost} _ {S} (\pi) \leq S _ {V} ^ {\mathrm{alloc}})
 $$
 
 If typical proofs from an application exceed most verifiers'  $R_V$ , that application cannot be widely usable without reintroducing trust. This means proof efficiency defines adoption boundaries—if users' devices cannot verify something within their resource limits, they must rely on others, undermining decentralization.
@@ -187,7 +187,7 @@ Operational Rule: Treat REFUSED as an expected and final state, not as an except
 Each refusal provides a map of where verification demand exceeds supply. When a verifier publishes a refusal witness
 
 $$
-w _ {R} = (\text {l a s t h e a d e r}, \text {o b j e c t i d , c o d e , b o u n d d i m e n s i o n})
+w _ {R} = (\text{lastheader}, \text{objectid , code , bounddimension})
 $$
 
 it describes precisely where verification failed. These refusal witnesses can safely be shared to inform the ecosystem:
@@ -245,7 +245,7 @@ In a verification-first system, the request becomes a claim:
 Formally,
 
 $$
-c = \left(\text {s t a t e m e n t}, \text {a n c h o r}, \pi , \text {m e t a}\right)
+c = \left(\text{statement}, \text{anchor}, \pi , \text{meta}\right)
 $$
 
 where
@@ -343,7 +343,7 @@ This contract is what differentiates a verification-first network from a "truste
 Verification consumes limited resources: storage, bandwidth, and computation. Each verifier therefore has a finite "budget" that determines how many claims it can process in a given period:
 
 $$
-\min \left(\frac {B _ {V}}{\mathbb {E} [ | \pi | ]}, \frac {C _ {V}}{\mathbb {E} [ \mathrm {C o s t} _ {C} (\pi) ]}\right)
+\min \left(\frac {B _ {V}}{\mathbb{E} [ | \pi | ]}, \frac {C _ {V}}{\mathbb{E} [ \mathrm{Cost} _ {C} (\pi) ]}\right)
 $$
 
 This means every device—whether a phone, node, or data center—must choose what to verify. Just as a commuter with limited fuel decides which destinations are worth driving to, verifiers allocate their finite capacity toward proofs they deem most valuable.
@@ -411,7 +411,7 @@ In this model, proofs behave like commodities with unique physical and economic 
 Formally, a proof bundle is defined as:
 
 $$
-B = \{\mathrm {h e a d e r s , w i t n e s s , a c c o u n t s e g m e n t s ,} \pi , \mathrm {s c h e m a I D s} \}
+B = \{\mathrm{headers , witness , accountsegments ,} \pi , \mathrm{schemaIDs} \}
 $$
 
 Bundles can be tailored for different verifier classes—mobile clients receive lighter bundles; archival nodes may handle full-scope sets.
@@ -579,7 +579,7 @@ Example: A decentralized exchange could use dozens of such feeds. Even if half o
 Because each verifier operates under different resource bounds, there can be no universal truth visible to all participants simultaneously. Each verifier maintains a local truth zone—the subset of claims it can currently verify:
 
 $$
-T Z (V) = \{c \mid P (c, D _ {V}, R _ {V}) \neq \mathrm {R E F U S E D} \}
+T Z (V) = \{c \mid P (c, D _ {V}, R _ {V}) \neq \mathrm{REFUSED} \}
 $$
 
 This means correctness is relative to scope. Your mobile device may know 10,000 verified claims; an archival node might know 10 million. Both are correct within their zones.
@@ -769,7 +769,7 @@ Bounded verification creates scarcity. Scarcity creates markets for proofs. Mark
 This forms Zenon's self-driving peer-to-peer loop:
 
 $$
-\text {S c a r c i t y} \Rightarrow \text {M a r k e t s} \Rightarrow \text {R e l a y I n c e n t i v e s} \Rightarrow \text {E x p a n d e d A c c e s s} \Rightarrow \text {R e n e w e d D e m a n d}
+\text{Scarcity} \Rightarrow \text{Markets} \Rightarrow \text{RelayIncentives} \Rightarrow \text{ExpandedAccess} \Rightarrow \text{RenewedDemand}
 $$
 
 Each stage reinforces the next, creating an autonomic economic feedback system. When verifiability lags, relays and caching nodes gain profit motives to fill the gap. When proof coverage grows, verification costs fall, allowing more users to join.

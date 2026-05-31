@@ -8,7 +8,7 @@ This Issue collects open questions about the ChangesHash commitment mechanism an
 
 ## Background
 
-ChangesHash is described as a cryptographic commitment to the aggregate state delta produced by a Momentum block. According to [Account-Chain Commitments](../docs/notes/account-chain-commitments.md#4-how-changeshash-fits-into-this-model), it represents the digest of:
+ChangesHash is described as a cryptographic commitment to the aggregate state delta produced by a Momentum block. According to [Account-Chain Commitments](/architecture/data-structures/account-chain-commitments), it represents the digest of:
 
 - Balance updates
 - Account-chain header updates
@@ -19,7 +19,7 @@ ChangesHash is described as a cryptographic commitment to the aggregate state de
 - Staking and fusion metadata
 - Token definitions
 
-The commitment is computed by Pillars during Momentum production (see [Pillars](../docs/notes/pillars.md#5-consensus-flow-simplified), step 5).
+The commitment is computed by Pillars during Momentum production (see [Pillars](/architecture/node-architecture/pillars), step 5).
 
 ---
 
@@ -27,7 +27,7 @@ The commitment is computed by Pillars during Momentum production (see [Pillars](
 
 ### Context
 
-The [Commitments & Proofs](../docs/specs/commitments-and-proofs.md) specification explicitly flags this as a gap:
+The [Commitments & Proofs](/specifications/commitments-and-proofs) specification explicitly flags this as a gap:
 
 > **Verify partial state delta (per-account slice)** — Required commitment: decomposable delta commitment — **Exists today? No** — Upgrade needed: Merkle/vector commitment
 
@@ -58,11 +58,11 @@ The same document notes:
 
 ### Context
 
-The [Pillars](../docs/notes/pillars.md#7-open-questions) document raises determinism as an open question:
+The [Pillars](/architecture/node-architecture/pillars) document raises determinism as an open question:
 
 > What guarantees determinism across implementations?
 
-The [Account-Chain Commitments](../docs/notes/account-chain-commitments.md) document assumes deterministic execution:
+The [Account-Chain Commitments](/architecture/data-structures/account-chain-commitments) document assumes deterministic execution:
 
 > ChangesHash is a commitment to the aggregate effect of all included account-chain transitions.
 
@@ -88,7 +88,7 @@ But no formal proof or specification ensures all implementations produce identic
 
 ### Context
 
-The [Account-Chain Commitments](../docs/notes/account-chain-commitments.md#4-how-changeshash-fits-into-this-model) document provides an informal list:
+The [Account-Chain Commitments](/architecture/data-structures/account-chain-commitments) document provides an informal list:
 
 > ChangesHash represents the cryptographic digest of:
 > - balance updates
@@ -127,11 +127,11 @@ This raises several ambiguities.
 
 | Document | Relevance |
 |----------|-----------|
-| [Account-Chain Commitments](../docs/notes/account-chain-commitments.md) | Defines ChangesHash role and contents |
-| [Commitments & Proofs](../docs/specs/commitments-and-proofs.md) | Audit of what is provable; flags decomposability gap |
-| [Pillars](../docs/notes/pillars.md) | Describes ChangesHash computation in consensus flow |
-| [State Proof Bundles](../docs/notes/state-proof-bundles.md) | References ChangesHash as Momentum commitment |
-| [Open Research Questions](../docs/research/open-research-questions.md) | Lists related open questions |
+| [Account-Chain Commitments](/architecture/data-structures/account-chain-commitments) | Defines ChangesHash role and contents |
+| [Commitments & Proofs](/specifications/commitments-and-proofs) | Audit of what is provable; flags decomposability gap |
+| [Pillars](/architecture/node-architecture/pillars) | Describes ChangesHash computation in consensus flow |
+| [State Proof Bundles](/light-clients/state-proof-bundles) | References ChangesHash as Momentum commitment |
+| [Open Research Questions](/research/open-questions) | Lists related open questions |
 
 ---
 

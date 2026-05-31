@@ -4,7 +4,7 @@ This paper presents research on minimal state frontier verification for the Zeno
 
 ## Download
 
-<a href="minimal_state_frontier_verification_final.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/minimal-state-frontier.pdf)
 
 ## Related Documents
 

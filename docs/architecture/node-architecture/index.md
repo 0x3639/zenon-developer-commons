@@ -47,4 +47,4 @@ Execution happens at the edge (Sentries), not at consensus (Pillars). Pillars co
 
 - [Minimal Sentry Node](minimal-sentry-node.md) — Describes the smallest useful Sentry: no global state, modest hardware requirements, serves as a bridge between light clients and the network.
 
-- [Minimal Sentry Node (Extended)](/architecture/minimal-sentry-node-extended) — Extended notes and deeper exploration of Sentry design.
+- [Minimal Sentry Node (Extended)](/architecture/node-architecture/minimal-sentry-node-extended) — Extended notes and deeper exploration of Sentry design.

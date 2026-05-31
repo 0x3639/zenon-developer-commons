@@ -1,5 +1,9 @@
 # Clarifying the Relationship Between NFT Steganography and Protocol-Level Commitments
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/steganographic-nft-commitments.pdf).
+:::
+
 A Critical Analysis of Application-Layer vs. Infrastructure-Layer Approaches
 
 Independent Blockchain Research December 2025

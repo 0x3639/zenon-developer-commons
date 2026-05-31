@@ -8,7 +8,7 @@ import rehypeKatex from 'rehype-katex';
 const config: Config = {
   title: 'Zenon Developer Commons',
   tagline: 'Verification-first architecture for the Network of Momentum',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon.ico',
 
   url: 'https://0x3639.github.io',
   baseUrl: '/zenon-developer-commons/',
@@ -50,7 +50,7 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          rehypePlugins: [[rehypeKatex, {strict: false, throwOnError: false}]],
           editUrl:
             'https://github.com/0x3639/zenon-developer-commons/tree/main/',
         },
@@ -75,12 +75,13 @@ const config: Config = {
   themeConfig: {
     image: 'img/social-card.jpg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Zenon Developer Commons',
       logo: {
-        alt: 'Zenon Developer Commons',
+        alt: 'Zenon Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -90,7 +91,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {to: '/for-enthusiasts', label: 'Enthusiasts', position: 'left'},
+        {to: '/learn', label: 'Learn', position: 'left'},
         {to: '/for-developers', label: 'Developers', position: 'left'},
         {to: '/for-researchers', label: 'Researchers', position: 'left'},
         {to: '/papers', label: 'Papers', position: 'left'},
@@ -107,7 +108,7 @@ const config: Config = {
         {
           title: 'Start Here',
           items: [
-            {label: 'For Enthusiasts', to: '/for-enthusiasts'},
+            {label: 'Learn the Basics', to: '/learn'},
             {label: 'For Developers', to: '/for-developers'},
             {label: 'For Researchers', to: '/for-researchers'},
           ],

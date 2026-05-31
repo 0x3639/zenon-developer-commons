@@ -1,7 +1,7 @@
 # Zenon Greenpaper Series Zenon SPV Implementation Guide
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/greenpaper-spv-implementation-guide.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/greenpaper-spv-implementation-guide.pdf).
 :::
 
 Status: Community-authored companion (non-normative, non-official)
@@ -357,7 +357,7 @@ In dPoS-style systems, longer confirmation windows reduce the probability that a
 
 # D.3 Conservative Safety Model (Toy Model; Illustrative)
 
-Define a toy policy risk function:  $\mathrm{f}_{\text{consensus}}(\mathbf{k}) = \mathrm{P}(\text{stake_attack}) + \mathrm{P}(\text{partition_k})$ . As an illustrative model, assume  $\mathrm{P}(\text{partition_k}) \approx \exp(-\lambda \mathbf{k})$  for some resilience factor  $\lambda > 0$ . This is not a proof; it is a placeholder to motivate why larger w improves safety under plausible network behavior.
+Define a toy policy risk function:  $\mathrm{f}_{\text{consensus}}(\mathbf{k}) = \mathrm{P}(\text{stake\_attack}) + \mathrm{P}(\text{partition\_k})$ . As an illustrative model, assume  $\mathrm{P}(\text{partition\_k}) \approx \exp(-\lambda \mathbf{k})$  for some resilience factor  $\lambda > 0$ . This is not a proof; it is a placeholder to motivate why larger w improves safety under plausible network behavior.
 
 ```txt
 Example (illustrative only): Assume P(stake_attack)  $< 1$ e-6(cost-prohibitive) Assume  $\lambda = 0.1$    

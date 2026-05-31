@@ -426,6 +426,6 @@ The integration respects Zenon's core principles:
 - [GALV Specification](/specifications/galv-spec-draft)
 - [GALV Composition](/architecture/galv-composition)
 - [Bounded Verification Series](/research/bounded-verification/)
-- [State Proof Bundles](/architecture/state-proof-bundles)
+- [State Proof Bundles](/light-clients/state-proof-bundles)
 - [Taxonomy: Deterministic Fact Acceptance](/research/taxonomy-deterministic-fact-acceptance)
 - [Engineering Roadmap — Bitcoin SPV](/bitcoin-spv/engineering-roadmap)

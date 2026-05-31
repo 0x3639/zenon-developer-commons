@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Bitcoin's Unfinished Constraint Part II
 
 ## Verify Bitcoin, Don't Bridge It

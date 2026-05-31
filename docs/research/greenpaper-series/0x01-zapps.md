@@ -1,5 +1,9 @@
 # zApps
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/greenpaper-series/0x01-zapps.pdf).
+:::
+
 Proof-First Verifiable Applications under Bounded Verification
 
 # Abstract

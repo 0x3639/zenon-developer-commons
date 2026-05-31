@@ -1,4 +1,7 @@
-```markdown
+---
+sidebar_position: 5
+---
+
 # Ghost in the Ledger: Why AI Haunts Execution-First Chains
 
 ## Prelude: Why Is AI Touching Blockchains at All?
@@ -580,4 +583,3 @@ What happens next depends on whether builders recognize the divide—and whether
 **Zenon's Network of Momentum is fully open-source and community-run.**
 
 **More formal documentation and ongoing community research can be found at:** [https://github.com/TminusZ/zenon-developer-commons](https://github.com/TminusZ/zenon-developer-commons)
-```

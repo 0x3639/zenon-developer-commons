@@ -1,5 +1,9 @@
 # Header-Only Verification and the State Commitment Invariant
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/header-only-verification.pdf).
+:::
+
 Research Note — Non-Normative, Proof-Oriented
 
 # Abstract
@@ -61,7 +65,7 @@ Let Commit be a binding, collision-resistant state commitment scheme supporting 
 We assume the chain selection function is prefix-monotonic and fork-resolving: extending the canonical chain strictly increases weight under standard consensus safety assumptions. Formally, if chain  $C'$  extends chain  $C$ , then:
 
 $$
-\operatorname {W e i g h t} \left(\mathrm {C} ^ {\prime}\right) > \operatorname {W e i g h t} (\mathrm {C})
+\operatorname{Weight} \left(\mathrm{C} ^ {\prime}\right) > \operatorname{Weight} (\mathrm{C})
 $$
 
 This property holds for proof-of-work (cumulative difficulty), proof-of-stake (cumulative stake-weight), and momentum-based consensus (pillar quorum progression).
@@ -71,7 +75,7 @@ This property holds for proof-of-work (cumulative difficulty), proof-of-stake (c
 A verifier does not need to know  $S_{i}$  if it can verify:
 
 $$
-[ H _ {i} \text {i s v a l i d} \wedge C _ {i} = \operatorname {C o m m i t} (S _ {i}) \wedge C _ {i} \text {w a s a g r e e d u p o n b y}
+[ H _ {i} \text{isvalid} \wedge C _ {i} = \operatorname{Commit} (S _ {i}) \wedge C _ {i} \text{wasagreeduponby}
 $$
 
 Invariant (quotable form): A verifier need not execute transitions if consensus commits to a binding representation of post-transition state.
@@ -105,13 +109,13 @@ No transaction execution is required.
 A verifier issues a state query against  $S_i$ , receiving a proof  $\pi$  attesting to membership, non-membership, or value correctness under commitment  $C_i$ . Formally:
 
 $$
-\pi = \operatorname {P r o v e} (x \in S _ {i}) \text {o r} \pi = \operatorname {P r o v e} (x \notin S _ {i})
+\pi = \operatorname{Prove} (x \in S _ {i}) \text{or} \pi = \operatorname{Prove} (x \notin S _ {i})
 $$
 
 The verifier checks:
 
 $$
-\operatorname {V e r i f y} \left(\mathrm {C} _ {\mathrm {i}}, \mathrm {x}, \pi\right) = \text {t r u e}
+\operatorname{Verify} \left(\mathrm{C} _ {\mathrm{i}}, \mathrm{x}, \pi\right) = \text{true}
 $$
 
 Examples of state queries: "UTXO u exists", "account balance = 100", "contract storage slot s has value v".
@@ -169,7 +173,7 @@ State transitions are deterministic
 We can define:
 
 $$
-C _ {i} = \text {C o m m i t} (\text {A c c o u n t - C h a i n s}, \text {P l a s m a S t a t e}, \text {z A p p I n t e r f a c e s})
+C _ {i} = \text{Commit} (\text{Account - Chains}, \text{PlasmaState}, \text{zAppInterfaces})
 $$
 
 The commitment need not expose individual components; it may bind an abstracted state delta or frontier representation, provided the mapping from protocol rules to committed state is deterministic. The specific serialization format and granularity of commitment is an implementation choice orthogonal to the invariant.

@@ -1,5 +1,9 @@
 # A Bounded Verification Architecture for Dual-Ledger Systems
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/greenpaper-series/0x00-bounded-verification.pdf).
+:::
+
 A verification-first framework for offline-resilient, edge-native participation
 
 # Abstract
@@ -55,7 +59,7 @@ def verify_inclusion(tx_hash, proof, merkle_root): current = tx_hash for (siblin
 Traditional retention horizons are static (e.g., "keep proofs for 30 days"). We introduce adaptive horizons that adjust based on verifier query patterns. Let  $\mathrm{Q(t)} =$  query frequency at time  $t$ ,  $S_{\max} =$  storage bound. The adaptive horizon  $H_{\text{adaptive}}$  satisfies:
 
 $$
-\mathrm {H} _ {\text {a d a p t i v e}} (\mathrm {t}) = \max  \left\{\mathrm {h}: \Sigma_ {\mathrm {i} = \mathrm {t} - \mathrm {h}} ^ {\mathrm {t}} [ \mathrm {Q} (\mathrm {i}) \cdot \operatorname {p r o o f} _ {-} \operatorname {s i z e} (\mathrm {i}) ] \leq \mathrm {S} _ {\max } \right\}
+\mathrm{H} _ {\text{adaptive}} (\mathrm{t}) = \max  \left\{\mathrm{h}: \Sigma_ {\mathrm{i} = \mathrm{t} - \mathrm{h}} ^ {\mathrm{t}} [ \mathrm{Q} (\mathrm{i}) \cdot \operatorname{proof} _ {-} \operatorname{size} (\mathrm{i}) ] \leq \mathrm{S} _ {\max } \right\}
 $$
 
 High-query accounts receive longer retention. Implementation uses exponentially-weighted moving average:  $Q(t) = \alpha \cdot Q_{\text{current}} + (1 - \alpha) \cdot Q(t-1)$ ,  $\alpha = 0.3$ . This enables efficient resource allocation—frequently queried data persists longer without manual configuration. For example, with 1MB storage: ~1000 proofs for high-frequency accounts, ~100 for low-frequency.

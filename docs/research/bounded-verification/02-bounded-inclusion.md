@@ -1,5 +1,9 @@
 # Bounded Inclusion Without Merkle Trees: Deterministic Verification Under Header-Only Constraints
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/bounded-inclusion.pdf).
+:::
+
 Anonymous Author(s)
 
 December 2025
@@ -48,7 +52,7 @@ A verifier checking inclusion of transaction  $t \in T_j$  requires:
 - O(log |T_i|) proof size (hash path from leaf to root) · Knowledge of intermediate hash values · Computational cost proportional to proof depth · Bandwidth proportional to log |T_i|
 ```
 
-This model does not scale efficiently to browser-native or header-only clients. For a block containing 10,000 transactions, a single inclusion proof requires approximately 14 hash values (log $\mathbf{■}(10,000) \approx$  13.29). For clients verifying multiple transactions, this overhead compounds linearly.
+This model does not scale efficiently to browser-native or header-only clients. For a block containing 10,000 transactions, a single inclusion proof requires approximately 14 hash values (log $\mathbf{\blacksquare}(10,000) \approx$  13.29). For clients verifying multiple transactions, this overhead compounds linearly.
 
 # 2.3 Limitations of Existing Solutions
 
@@ -87,12 +91,12 @@ These assumptions require that the execution environment exhibits no non-determi
 To ensure finite execution time, we introduce resource bounds  $\beta_{i}$  that constrain the computational cost of transactions in block  $i$ :
 
 $$
-\begin{array}{l} \beta_ {i} = (\text {g a s} _ {\text {l i m i t}}, \text {m e m o r y} _ {\text {l i m i t}}, \text {s t o r a g e} _ {\text {o p s}}, \dots) \text {V a l i d i f f : C o s t (T} _ {i}) \\ \leq \beta_ {i} (\text {c o m p o n e n t - w i s e}) \end{array}
+\begin{array}{l} \beta_ {i} = (\text{gas} _ {\text{limit}}, \text{memory} _ {\text{limit}}, \text{storage} _ {\text{ops}}, \dots) \text{Validiff : Cost (T} _ {i}) \\ \leq \beta_ {i} (\text{component - wise}) \end{array}
 $$
 
 These bounds serve dual purposes: they prevent denial-of-service attacks through resource exhaustion and enable predictable verification costs. Crucially, bounds are committed in the block header, making violations detectable without executing transactions.
 
-Important limitation: Light clients can verify that the aggregate execution cost satisfies  $\text{Cost}(\text{T\_i}) \leq \beta_{-i}$  through the header commitment, but cannot independently verify individual transaction costs without full execution. This means a light client verifying transaction  $t$  can confirm that some valid execution within  $\beta_{-i}$  produced the observed state, but cannot prove that  $t$  specifically consumed  $c$  gas units without executing it. For applications requiring precise gas accounting, light clients must either trust
+Important limitation: Light clients can verify that the aggregate execution cost satisfies  $\text{Cost}(\text{T\\_i}) \leq \beta_{-i}$  through the header commitment, but cannot independently verify individual transaction costs without full execution. This means a light client verifying transaction  $t$  can confirm that some valid execution within  $\beta_{-i}$  produced the observed state, but cannot prove that  $t$  specifically consumed  $c$  gas units without executing it. For applications requiring precise gas accounting, light clients must either trust
 
 tokenizer attestations or use conservative worst-case estimates.
 
@@ -113,7 +117,7 @@ H_i = (R_i, β_i, σ_i) Where: • R_i = h(S_i) is the state root (cryptographic
 A header  $H_{j}$  is valid if and only if:
 
 ```latex
-$\exists \mathrm{T\_i}:\delta (\mathrm{S\_}\{\mathrm{i - 1}\} ,\mathrm{T\_i}) = \mathrm{S\_i}\wedge \mathrm{Cost}(\mathrm{T\_i})\leq \beta_{-}\mathrm{i}$
+$\exists \mathrm{T\\_i}:\delta (\mathrm{S\\_}\{\mathrm{i - 1}\} ,\mathrm{T\\_i}) = \mathrm{S\\_i}\wedge \mathrm{Cost}(\mathrm{T\\_i})\leq \beta_{-}\mathrm{i}$
 ```
 
 Uniqueness under determinism: While multiple transaction orderings may exist that satisfy this condition, deterministic execution ensures that any admissible ordering producing  $S_{i}$  is equivalent with respect to externally observable state. That is, if both  $T_{i}$  and  $T_{i}'$  satisfy the validity condition, then  $\delta(S_{i-1}, T_{i}) = \delta(S_{i-1}, T_{i}') = S_{i}'$  meaning both orderings produce identical final state. Internal execution traces may differ, but the committed state root  $R_{i}$  uniquely determines the result.

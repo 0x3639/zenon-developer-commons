@@ -1,7 +1,7 @@
 # Network of Momentum - leaderless BFT dual ledger architecture
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/whitepaper.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/whitepaper.pdf).
 :::
 
 DRAFT v0.1, 31 March 2020
@@ -151,7 +151,7 @@ The core concept of the Proof of Work consensus algorithm is the competition of 
 For a cryptographically secure hash function  $\mathrm{H}(\cdot)$  like SHA-256 in the case of Bitcoin, and a given difficulty level  $\mathrm{D(h)}$ , each single query to  $\mathrm{H}(\cdot)$  is an independent and identically distributed Bernoulli trial with a success probability described by the following equation:
 
 $$
-P r (y: \mathcal {H} (x \| y) \leq D (h)) = 2 ^ {- h}
+P r (y: \mathcal{H} (x \| y) \leq D (h)) = 2 ^ {- h}
 $$
 
 Different implementations of PoW algorithms require different rates at which solutions are found in a given time interval: in the case of Bitcoin this rate is one solution for every 600 seconds, and for Ethereum every 15 seconds. The corresponding time period is directly correlated with the underlying data structure: for instance, Ethereum implements GHOST [30] to optimally determine the path that has the most computation work done upon to accommodate the short block times.
@@ -709,7 +709,7 @@ The time of one epoch is responsible for the minimum time after a transaction is
 If we note with  $\Delta t_{i}$  the difference between the timestamps for two consecutive finishing PoW transactions, the mean time will be
 
 $$
-A v g = \frac {\sum_ {i = 1} ^ {n} \delta t _ {i}}{n}, \Delta t _ {i} \notin \text {o u t l i e r s}
+A v g = \frac {\sum_ {i = 1} ^ {n} \delta t _ {i}}{n}, \Delta t _ {i} \notin \text{outliers}
 $$
 
 # F. Replacing regular quorums with proof of stake

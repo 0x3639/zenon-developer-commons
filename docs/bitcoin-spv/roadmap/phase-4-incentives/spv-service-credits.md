@@ -68,8 +68,8 @@ ServiceCredit {
 Credits earned per header:
 $$
 C_h = \begin{cases}
-C_{base} & \text{if first to relay} \\
-C_{base} / 2 & \text{if second to relay} \\
+C_{base} & \text{iffirsttorelay} \\
+C_{base} / 2 & \text{ifsecondtorelay} \\
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -81,7 +81,7 @@ $$
 
 Credits earned per finalized checkpoint:
 $$
-C_c = C_{checkpoint} \times (1 + \text{depth\_bonus})
+C_c = C_{checkpoint} \times (1 + \text{depth\\_bonus})
 $$
 
 Where depth_bonus increases with confirmation depth:
@@ -154,7 +154,7 @@ AccuracyRecord {
 ### 6.2 Accuracy Score Calculation
 
 $$
-\text{Accuracy} = \frac{\text{valid\_headers} + 10 \times \text{valid\_checkpoints}}{\text{total\_headers} + 10 \times \text{total\_checkpoints}}
+\text{Accuracy} = \frac{\text{valid\\_headers} + 10 \times \text{valid\\_checkpoints}}{\text{total\\_headers} + 10 \times \text{total\\_checkpoints}}
 $$
 
 ### 6.3 Accuracy-Based Rewards

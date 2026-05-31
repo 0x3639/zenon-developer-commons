@@ -6,4 +6,4 @@ This document explores the feasibility of satellite-assisted relay infrastructur
 
 ## Download
 
-<a href="satellite_assisted_relay_feasibility.pdf" target="_blank">Download the full feasibility study (PDF)</a>
+[Download the full feasibility study (PDF)](/pdf/feasibility/satellite-relay-feasibility.pdf)

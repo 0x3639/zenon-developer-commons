@@ -1,5 +1,9 @@
 # Bounded Verification for Decentralized Exchange Trading on Dual-Ledger Networks
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/bounded-verification-dex.pdf).
+:::
+
 Anonymous Author(s)  
 Revised Draft: December 2025
 
@@ -281,7 +285,7 @@ We adopt a constant-product automated market maker (AMM) model due to its mathem
 A liquidity pool maintains reserves of two tokens. Let x denote the reserve of the base token (e.g., ZNN) and y denote the reserve of the quote token (e.g., TOKEN). The core invariant of the constant-product model is:
 
 $$
-\mathbf {x} \cdot \mathbf {y} = K
+\mathbf{x} \cdot \mathbf{y} = K
 $$
 
 where  $\mathrm{K}$  is a constant that changes only when liquidity is added or removed. This invariant ensures that the product of reserves remains constant across swap operations, excluding fees.
@@ -291,23 +295,23 @@ where  $\mathrm{K}$  is a constant that changes only when liquidity is added or 
 Consider a user swapping  $\Delta x$  units of the base token into the pool. The protocol charges a trading fee  $f$  (typically  $f = 0.003$  for a  $0.3\%$  fee). The effective input after fee deduction is:
 
 $$
-\Delta \mathbf {x} ^ {\prime} = \Delta \mathbf {x} (1 - f)
+\Delta \mathbf{x} ^ {\prime} = \Delta \mathbf{x} (1 - f)
 $$
 
 The output amount  $\Delta y$  is calculated to maintain the constant-product invariant:
 
 $$
-\Delta \mathrm {y} = (\mathrm {y} \cdot \Delta \mathrm {x} ^ {\prime}) / (\mathrm {x} + \Delta \mathrm {x} ^ {\prime})
+\Delta \mathrm{y} = (\mathrm{y} \cdot \Delta \mathrm{x} ^ {\prime}) / (\mathrm{x} + \Delta \mathrm{x} ^ {\prime})
 $$
 
 After the swap, the pool reserves update to:
 
 $$
-\mathbf {x} ^ {\prime} = \mathbf {x} + \Delta \mathbf {x} ^ {\prime}
+\mathbf{x} ^ {\prime} = \mathbf{x} + \Delta \mathbf{x} ^ {\prime}
 $$
 
 $$
-\mathbf {y} ^ {\prime} = \mathbf {y} - \Delta \mathbf {y}
+\mathbf{y} ^ {\prime} = \mathbf{y} - \Delta \mathbf{y}
 $$
 
 These equations provide a deterministic check that any party can recompute locally. Given preswap state  $(\mathbf{x},\mathbf{y})$ , input  $\Delta \mathbf{x}$ , and fee  $f$ , the post-swap state  $(\mathbf{x}',\mathbf{y}')$  and output  $\Delta \mathbf{y}$  are uniquely determined. This determinism is essential for verifiable state transitions.
@@ -317,7 +321,7 @@ These equations provide a deterministic check that any party can recompute local
 The spot price before the swap is  $p_0 = y / x$ . The effective average price paid by the user is  $p\_avg = \Delta x / \Delta y$ . Price impact quantifies the deviation from the pre-swap spot price:
 
 $$
-\text {i m p a c t} = \left(p _ {-} a v g - p _ {0}\right) / p _ {0}
+\text{impact} = \left(p _ {-} a v g - p _ {0}\right) / p _ {0}
 $$
 
 Users typically specify a maximum acceptable slippage to protect against adverse price movements during transaction execution. This slippage tolerance  $\Delta y_{\mathrm{min}}$  is incorporated into the verifiable swap statement.
@@ -492,7 +496,7 @@ Mitigation: Extend k; user interface warnings; automatic re-sync on reconnection
 
 # 5.4. Proof Size Analysis
 
-If state is committed using a Merkle tree with N leaves, membership proofs for m account-chains require  $\mathrm{O(m\log N)}$  space and computation.
+If state is committed using a Merkle tree with N leaves, membership proofs for m account-chains require  $\mathrm{O(m\logN)}$  space and computation.
 
 # Concrete Example:
 
@@ -511,7 +515,7 @@ If state is committed using a Merkle tree with N leaves, membership proofs for m
 Total proofs  $= \mathfrak{m}\times$  keys_per_account  $\times$  depth  $\times$  hash_size
 
 $$
-\begin{array}{l} = 4 \times 2 \times 2 4 \times 3 2 \text {b y t e s} \\ = 6, 1 4 4 \text {b y t e s} \approx 6 \mathrm {K B} \\ \end{array}
+\begin{array}{l} = 4 \times 2 \times 2 4 \times 3 2 \text{bytes} \\ = 6, 1 4 4 \text{bytes} \approx 6 \mathrm{KB} \\ \end{array}
 $$
 
 Optimization: Batch proofs can share common ancestors, reducing overhead to  $\sim 4 - 5$  KB in practice.
@@ -537,7 +541,7 @@ We specify a complete protocol for executing and verifying DEX swaps within the 
 The user interface queries current pool reserves  $(\mathrm{x},\mathrm{y})$  from an available data source and computes the expected output  $\Delta y$  using the formulas from Section 4.2. The user specifies an input amount  $\Delta x$  and maximum slippage tolerance s. The minimum acceptable output is then:
 
 $$
-\Delta \mathrm {y} _ {-} \min  = \Delta \mathrm {y} (1 - \mathrm {s})
+\Delta \mathrm{y} _ {-} \min  = \Delta \mathrm{y} (1 - \mathrm{s})
 $$
 
 # 6.2. Phase B: Intent Signing
@@ -545,7 +549,7 @@ $$
 The user signs a structured intent message M containing all swap parameters:
 
 $$
-M = \left(p o o l \_ i d, \Delta x, \Delta y \_ m i n, \text {d e a d l i n e}, \text {n o n c e}\right)
+M = \left(p o o l \_ i d, \Delta x, \Delta y \_ m i n, \text{deadline}, \text{nonce}\right)
 $$
 
 The signature  $\sigma = \operatorname{Sign\_sk}(\mathrm{H}(\mathbf{M}))$  commits the user to these parameters. The nonce prevents replay attacks, while the deadline ensures time-bounded validity.
@@ -1287,7 +1291,7 @@ Integrating bounded verification with consensus-level MEV mitigation (e.g., thre
 
 # 14. Conclusion
 
-We have presented a framework for bounded verification of DEX swap transactions that decouples verification complexity from global blockchain throughput. By focusing verification on state transition effects rather than transaction identity, we achieve  $\mathrm{O(m\log N)}$  proof size and computation, where  $m$  is the number of touched account-chains (typically 2-4) and  $N$  is total state size.
+We have presented a framework for bounded verification of DEX swap transactions that decouples verification complexity from global blockchain throughput. By focusing verification on state transition effects rather than transaction identity, we achieve  $\mathrm{O(m\logN)}$  proof size and computation, where  $m$  is the number of touched account-chains (typically 2-4) and  $N$  is total state size.
 
 # Key findings:
 

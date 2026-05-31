@@ -18,11 +18,11 @@ Zenon's overall architecture — a dual-ledger system combining a chain of **mom
 
 ### Momentum
 
-A sequential unit produced by the consensus layer, containing snapshots of recent account blocks and signed by Pillars. Momentums give the network a shared, ordered heartbeat. See [Momentum Data Fields](/architecture/momentum-data-fields) and [Momentum Header Verification](/architecture/momentum-header-verification).
+A sequential unit produced by the consensus layer, containing snapshots of recent account blocks and signed by Pillars. Momentums give the network a shared, ordered heartbeat. See [Momentum Data Fields](/architecture/data-structures/momentum-data-fields) and [Momentum Header Verification](/light-clients/momentum-header-verification).
 
 ### Account-chain (block-lattice)
 
-Each address has its own mini-blockchain of blocks. These account-chains are anchored into momentums, forming a DAG rather than a single global chain. See [Account-Chain Commitments](/architecture/account-chain-commitments).
+Each address has its own mini-blockchain of blocks. These account-chains are anchored into momentums, forming a DAG rather than a single global chain. See [Account-Chain Commitments](/architecture/data-structures/account-chain-commitments).
 
 ### Pillar
 
@@ -30,7 +30,7 @@ A consensus node that produces and signs momentums. Pillars are the top of the [
 
 ### Sentinel
 
-A proof-serving node that sits below Pillars, supplying the compact proofs light clients need. See the [Sentinels](/architecture/sentinels/) section.
+A proof-serving node that sits below Pillars, supplying the compact proofs light clients need. See [Node Architecture](/architecture/node-architecture) — including the [Sentinel Middle Layer](/architecture/node-architecture/sentinel-middle-layer) and [Sentinel Finalization Layer](/architecture/node-architecture/sentinel-finalization-layer).
 
 ### Sentry
 

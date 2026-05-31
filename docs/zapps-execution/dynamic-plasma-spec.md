@@ -228,7 +228,7 @@ No off-by-one ambiguity is permitted.
 
 Fixed-point utilization:
 
-U = \min\left(\frac{\text{epoch_consumed_base_plasma}}{\text{BaselinePlasmaPerEpoch}}, 1\right)
+U = \min\left(\frac{\text{epoch\_consumed\_base\_plasma}}{\text{BaselinePlasmaPerEpoch}}, 1\right)
 
 Canonical function:
 

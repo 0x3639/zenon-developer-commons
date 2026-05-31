@@ -1,5 +1,9 @@
 # Genesis-Anchored Lineage Verification for Offline-Resilient Light Clients
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/genesis-anchored-lineage-verification.pdf).
+:::
+
 Anonymous
 
 # Abstract
@@ -129,7 +133,7 @@ In blockchain and distributed ledger systems, the genesis block serves as the ul
 Definition 3.1 (Genesis Block). A genesis block  $G$  is the unique initial block with no parent, formally defined by:
 
 $$
-\operatorname {p a r e n t} (G) = \bot \tag {1}
+\operatorname{parent} (G) = \bot \tag {1}
 $$
 
 where parent:  $\mathcal{B}\to \mathcal{B}\cup \{\bot \}$  maps each block to its parent (or  $\perp$  for genesis).
@@ -201,7 +205,7 @@ Since  $R$  is assumed publicly verifiable, case (1) is infeasible. Case (2) req
 Theorem 3.3 (Anchor Security Bound). The security of genesis-anchored verification degrades over time as:
 
 $$
-S (t) = \min  \left(C _ {\text {h a s h}}, C _ {\text {r e w r i t e}} \left(t _ {A}, t\right)\right) \tag {4}
+S (t) = \min  \left(C _ {\text{hash}}, C _ {\text{rewrite}} \left(t _ {A}, t\right)\right) \tag {4}
 $$
 
 where  $C_{\mathrm{hash}}$  is the cost of breaking the hash function and  $t$  is the current time.
@@ -223,7 +227,7 @@ Blockchain systems enforce ancestry through cryptographic hash chains:
 Definition 4.1 (Parent Hash Commitment). Each block  $B$  contains a commitment to its parent via:
 
 $$
-B. \text {p a r e n t H a s h} = H (\text {p a r e n t} (B)) \tag {5}
+B. \text{parentHash} = H (\text{parent} (B)) \tag {5}
 $$
 
 where  $H: \{0,1\}^* \to \{0,1\}^n$  is a cryptographic hash function.
@@ -233,7 +237,7 @@ This creates an immutable chain structure:
 Lemma 4.1 (Hash Chain Immutability). Given blocks  $B_{1}, B_{2}$  where  $\operatorname{parent}(B_2) = B_1$ , any modification to  $B_{1}$  produces  $B_{1}'$  with:
 
 $$
-H \left(B _ {1} ^ {\prime}\right) \neq H \left(B _ {1}\right) = B _ {2}. \text {p a r e n t H a s h} \tag {6}
+H \left(B _ {1} ^ {\prime}\right) \neq H \left(B _ {1}\right) = B _ {2}. \text{parentHash} \tag {6}
 $$
 
 invalidating  $B_{2}$  with overwhelming probability  $1 - 2^{-n}$ .
@@ -247,7 +251,7 @@ We distinguish two related but distinct concepts:
 Definition 4.2 (Continuity). Blocks  $B_{i}, B_{i+1}$  are continuous if:
 
 $$
-\operatorname {p a r e n t} \left(B _ {i + 1}\right) = B _ {i} \Leftrightarrow B _ {i + 1}. \text {p a r e n t H a s h} = H \left(B _ {i}\right) \tag {7}
+\operatorname{parent} \left(B _ {i + 1}\right) = B _ {i} \Leftrightarrow B _ {i + 1}. \text{parentHash} = H \left(B _ {i}\right) \tag {7}
 $$
 
 Continuity is a local property verifiable from two adjacent blocks.
@@ -255,7 +259,7 @@ Continuity is a local property verifiable from two adjacent blocks.
 Definition 4.3 (Lineage). Block  $B$  has lineage from  $G$  if there exists a path:
 
 $$
-\mathcal {C} (G, B) = \left[ G = B _ {0}, B _ {1}, \dots , B _ {k} = B \right] \tag {8}
+\mathcal{C} (G, B) = \left[ G = B _ {0}, B _ {1}, \dots , B _ {k} = B \right] \tag {8}
 $$
 
 where  $\operatorname{parent}(B_{i+1}) = B_i$  for all  $0 \leq i < k$ . Lineage is a global property requiring path existence to genesis.
@@ -297,13 +301,13 @@ Proposition 4.2 (Verification Compactness). Lineage verification requires space 
 Proof. A lineage proof consists of:
 
 $$
-\pi_ {\text {l i n e a g e}} = \left[ B _ {0} = G, B _ {1}, \dots , B _ {k} = B \right] \tag {9}
+\pi_ {\text{lineage}} = \left[ B _ {0} = G, B _ {1}, \dots , B _ {k} = B \right] \tag {9}
 $$
 
 For verification, only block headers containing parent hashes are needed:
 
 $$
-\pi_ {\text {c o m p a c t}} = \left[ h _ {0}, h _ {1}, \dots , h _ {k} \right] \text {w h e r e} h _ {i} = H \left(B _ {i}. \text {h e a d e r}\right) \tag {10}
+\pi_ {\text{compact}} = \left[ h _ {0}, h _ {1}, \dots , h _ {k} \right] \text{where} h _ {i} = H \left(B _ {i}. \text{header}\right) \tag {10}
 $$
 
 Each hash is  $n$  bits, yielding total size  $O(k \cdot n)$  bits. For  $k = 10^6$  blocks and  $n = 256$  bits, this is approximately 32 MB—feasible for light clients.
@@ -317,7 +321,7 @@ We present a conceptual verification protocol for offline-resilient light client
 A light client  $L$  maintains state  $\sigma_L$ :
 
 $$
-\sigma_ {L} = \left(G _ {\text {h a s h}}, A _ {\text {r e f}}, F _ {\text {l a s t}}, t _ {\text {l a s t}}\right) \tag {11}
+\sigma_ {L} = \left(G _ {\text{hash}}, A _ {\text{ref}}, F _ {\text{last}}, t _ {\text{last}}\right) \tag {11}
 $$
 
 where:
@@ -401,7 +405,7 @@ Genesis-anchored lineage verification provides the following formal guarantees:
 Theorem 6.1 (Network Identity Preservation). If light client  $L$  successfully verifies frontier  $F'$  after offline period  $\Delta t$ , then  $F'$  belongs to the network with genesis  $G$  satisfying  $H(G) = G_{\mathrm{hash}}$  with probability  $\geq 1 - \epsilon$  where:
 
 $$
-\epsilon \leq 2 ^ {- n} \cdot | F ^ {\prime} | + P _ {\text {r e w r i t e}} \left(t _ {A}, t _ {\text {n o w}}\right) \tag {12}
+\epsilon \leq 2 ^ {- n} \cdot | F ^ {\prime} | + P _ {\text{rewrite}} \left(t _ {A}, t _ {\text{now}}\right) \tag {12}
 $$
 
 and  $n$  is a hash function output size,  $P_{\mathrm{rewrite}}$  is probability of external record rewrite.
@@ -435,7 +439,7 @@ Theorem 6.3 (Fabricated History Resistance). Creating a fabricated history that 
 Proof. A fabricated history  $\mathcal{C}'$  must satisfy:
 
 $$
-H \left(\mathcal {C} ^ {\prime} [ 0 ]\right) = G _ {\text {h a s h}} \tag {13}
+H \left(\mathcal{C} ^ {\prime} [ 0 ]\right) = G _ {\text{hash}} \tag {13}
 $$
 
 where  $\mathcal{C}'[0] \neq G$ . This requires either:
@@ -555,7 +559,7 @@ We quantify attack costs:
 Theorem 8.1 (Attack Cost Lower Bound). Any attack defeating genesis-anchored verification requires cost:
 
 $$
-C _ {\text {a t t a c k}} \geq \min  \left(2 ^ {n / 2} \cdot C _ {\text {h a s h}}, C _ {\text {r e w r i t e}} \left(t _ {A}, t _ {\text {n o w}}\right)\right) \tag {14}
+C _ {\text{attack}} \geq \min  \left(2 ^ {n / 2} \cdot C _ {\text{hash}}, C _ {\text{rewrite}} \left(t _ {A}, t _ {\text{now}}\right)\right) \tag {14}
 $$
 
 where  $C_{\mathrm{hash}}$  is cost per hash computation.

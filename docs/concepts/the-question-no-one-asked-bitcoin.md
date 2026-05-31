@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # The Question No One Bothered to Ask Bitcoin  
 *A study in verification‑first architecture and the path the industry skipped*
 

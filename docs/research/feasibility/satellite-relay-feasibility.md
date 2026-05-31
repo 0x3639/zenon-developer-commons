@@ -1,5 +1,9 @@
 # Satellite-Assisted Relay for Browser-Native Light Clients in Proof-First Dual-Ledger Networks:
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/feasibility/satellite-relay-feasibility.pdf).
+:::
+
 Transport Feasibility Notes
 
 # Abstract
@@ -121,17 +125,17 @@ Assume:
 Total downstream bandwidth:
 
 $$
-B _ {\text {d o w n}} = N \cdot H \cdot f
+B _ {\text{down}} = N \cdot H \cdot f
 $$
 
 Example calculation:
 
 $$
-\begin{array}{l} \bullet N = 1 0 ^ {6} \\ \bullet H = 3 0 0 \text {b y t e s} \\ \bullet f = 0. 1 \mathrm {H z} (\text {o n e h e a r d e r p e r 1 0 s e c o n d s}) \\ \end{array}
+\begin{array}{l} \bullet N = 1 0 ^ {6} \\ \bullet H = 3 0 0 \text{bytes} \\ \bullet f = 0. 1 \mathrm{Hz} (\text{onehearderper10seconds}) \\ \end{array}
 $$
 
 $$
-B _ {\text {d o w n}} = 1 0 ^ {6} \times 3 0 0 \times 0. 1 = 3 0 \mathrm {M B / s}
+B _ {\text{down}} = 1 0 ^ {6} \times 3 0 0 \times 0. 1 = 3 0 \mathrm{MB / s}
 $$
 
 Modern satellite broadcast systems support this bandwidth, particularly with IP multicast. Uplink bandwidth (transactions, proof requests) is orders of magnitude smaller and bursty, making contention manageable.
@@ -167,7 +171,7 @@ Network-independent header distribution
 Let  $p_{\mathrm{t}}$  = terrestrial connectivity failure probability and  $p_{\mathrm{s}}$  = satellite connectivity failure probability. If failures are independent:
 
 $$
-A = 1 - \left(p _ {\mathrm {t}} \cdot p _ {\mathrm {s}}\right)
+A = 1 - \left(p _ {\mathrm{t}} \cdot p _ {\mathrm{s}}\right)
 $$
 
 Independent failure modes improve overall availability. However, this does not eliminate targeted censorship—a determined adversary controlling both terrestrial and satellite infrastructure can still block participation.

@@ -4,7 +4,7 @@ This document provides a critical analysis and hostile review of the header-only
 
 ## Download
 
-<a href="header_only_verification_hostile_review.pdf" target="_blank">Download the hostile review (PDF)</a>
+[Download the hostile review (PDF)](/pdf/research/header-only-verification-hostile-review.pdf)
 
 ## Related Documents
 

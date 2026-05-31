@@ -3,13 +3,29 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(
+      120% 120% at 50% 0%,
+      rgba(0, 231, 33, 0.12) 0%,
+      rgba(10, 11, 12, 0) 60%
+    ),
+    #0a0b0c;
+  color: #ffffff;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.heroBanner :global(.hero__title) {
+  color: var(--ifm-color-primary-light);
+}
+
+.heroBanner :global(.hero__subtitle) {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .heroLede {
   max-width: 720px;
   margin: 1rem auto 0;
   font-size: 1.1rem;
-  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media screen and (max-width: 996px) {

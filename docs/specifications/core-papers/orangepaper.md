@@ -1,7 +1,7 @@
 # Zenon Orangepaper
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/orangepaper.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/orangepaper.pdf).
 :::
 
 Scaling Bitcoin Through Verification-First Interoperability
@@ -1433,7 +1433,7 @@ Zenon's security properties are formally stated to distinguish cryptographic gua
 Safety (Cryptographic): No invalid Bitcoin proof can be accepted by an honest verifier operating under declared resource bounds.
 
 $$
-\forall P: \operatorname {v e r i f y} (P) = \operatorname {V E R I F I E D} \Rightarrow \operatorname {v a l i d} _ {\text {b i t c o i n}} \operatorname {p r o o f} (P)
+\forall P: \operatorname{verify} (P) = \operatorname{VERIFIED} \Rightarrow \operatorname{valid} _ {\text{bitcoin}} \operatorname{proof} (P)
 $$
 
 Holds under: Cryptographic assumptions (SHA-256, ECDSA security), bounded resources.
@@ -1443,7 +1443,7 @@ Does not depend on: Economic participation, proof availability, network connecti
 Liveness (Economic): Every valid Bitcoin proof is eventually verified, assuming at least one honest proof supplier and rational economic participation.
 
 $$
-\forall P: \operatorname {v a l i d} (P) \wedge \operatorname {a v a i l a b l e} (P) \Rightarrow \diamond \operatorname {v e r i f y} (P) = \operatorname {V E R I F I E D}
+\forall P: \operatorname{valid} (P) \wedge \operatorname{available} (P) \Rightarrow \diamond \operatorname{verify} (P) = \operatorname{VERIFIED}
 $$
 
 Holds under: Economic incentives, at least one honest relay, eventual proof delivery.
@@ -1455,13 +1455,13 @@ Critical distinction: Safety is an architectural guarantee; liveness is an econo
 Bounded Determinism: Verification always halts within declared resource limits, producing either VERIFIED or REFUSED.
 
 $$
-\forall P: \operatorname {v e r i f y} (P) \text {h a l t s} \leq T _ {\max } \wedge \operatorname {m e m o r y} (P) \leq M _ {\max }
+\forall P: \operatorname{verify} (P) \text{halts} \leq T _ {\max } \wedge \operatorname{memory} (P) \leq M _ {\max }
 $$
 
 Refusal Correctness: A refusal indicates either genuine data unavailability or resource bound exceedance—never a false negative for available, valid proofs within bounds.
 
 $$
-\forall P: \operatorname {v e r i f y} (P) = \operatorname {R E F U S E D} \Rightarrow \neg \operatorname {a v a i l a b l e} (P) \vee \operatorname {e x c e e d s} _ {\text {b o u n d s}} (P)
+\forall P: \operatorname{verify} (P) = \operatorname{REFUSED} \Rightarrow \neg \operatorname{available} (P) \vee \operatorname{exceeds} _ {\text{bounds}} (P)
 $$
 
 # 8 Part VII: Performance and Scalability
@@ -1559,7 +1559,7 @@ Zenon's economic model can create measurable markets for Bitcoin proof delivery.
 # Verifier Rewards:
 
 $$
-R _ {\text {v e r i f i e r}} = \alpha \cdot P _ {\text {d e l i v e r e d}} + \beta \cdot (1 - R _ {\text {l o c a l}})
+R _ {\text{verifier}} = \alpha \cdot P _ {\text{delivered}} + \beta \cdot (1 - R _ {\text{local}})
 $$
 
 where  $P_{\text{delivered}} =$  proofs delivered,  $R_{\text{local}} =$  local refusal rate
@@ -1567,7 +1567,7 @@ where  $P_{\text{delivered}} =$  proofs delivered,  $R_{\text{local}} =$  local 
 # Relay Rewards:
 
 $$
-R _ {\text {r e l a y}} = \gamma \cdot B _ {\text {s e r v e d}} + \delta \cdot L _ {\text {p e r f o r m a n c e}}
+R _ {\text{relay}} = \gamma \cdot B _ {\text{served}} + \delta \cdot L _ {\text{performance}}
 $$
 
 where  $B_{\mathrm{served}} = \mathrm{bandwidth}$  served,  $L_{\mathrm{performance}} = \mathrm{latency}$  performance
@@ -1575,7 +1575,7 @@ where  $B_{\mathrm{served}} = \mathrm{bandwidth}$  served,  $L_{\mathrm{performa
 # Penalties:
 
 $$
-P _ {\text {u n r e l i a b l e}} = - \epsilon \cdot F _ {\text {i n c o r r e c t}} - \zeta \cdot T _ {\text {s t a l e}}
+P _ {\text{unreliable}} = - \epsilon \cdot F _ {\text{incorrect}} - \zeta \cdot T _ {\text{stale}}
 $$
 
 where  $F_{\mathrm{incorrect}} =$  invalid proofs,  $T_{\mathrm{state}} =$  stale proofs
@@ -1585,7 +1585,7 @@ Nash Equilibrium: Honest relay dominates (proof cost  $<$  reward).
 # 9.1.1 Verifier Rewards
 
 $$
-R _ {\text {v e r i f i e r}} = \alpha \cdot P _ {\text {d e l i v e r e d}} + \beta \cdot \left(1 - R _ {\text {l o c a l}}\right)
+R _ {\text{verifier}} = \alpha \cdot P _ {\text{delivered}} + \beta \cdot \left(1 - R _ {\text{local}}\right)
 $$
 
 -  $P_{\text{delivered}}$ : Number of valid proofs delivered
@@ -1599,7 +1599,7 @@ Interpretation: Verifiers can earn more by delivering proofs to high-refusal reg
 # 9.1.2 Relay Rewards
 
 $$
-R _ {\text {r e l a y}} = \gamma \cdot B _ {\text {s e r v e d}} + \delta \cdot L _ {\text {p e r f o r m a n c e}}
+R _ {\text{relay}} = \gamma \cdot B _ {\text{served}} + \delta \cdot L _ {\text{performance}}
 $$
 
 -  $B_{\text{served}}$ : Bandwidth served (proof distribution volume)
@@ -1611,7 +1611,7 @@ $$
 # 9.1.3 Penalties
 
 $$
-P _ {\text {u n r e l i a b l e}} = - \epsilon \cdot F _ {\text {i n c o r r e c t}} - \zeta \cdot T _ {\text {s t a l e}}
+P _ {\text{unreliable}} = - \epsilon \cdot F _ {\text{incorrect}} - \zeta \cdot T _ {\text{stale}}
 $$
 
 -  $F_{\mathrm{incorrect}}$ : Incorrect or invalid proofs delivered
@@ -1629,7 +1629,7 @@ Effect: Unreliable or dishonest suppliers can be economically punished through r
 Proof price can follow supply and demand, adjusted by regional refusal density and proof complexity:
 
 $$
-\text {P r i c e} = \text {B a s e} _ {\text {c o s t}} \times \left(1 + R _ {\text {r e g i o n a l}}\right) \times S _ {\text {c o m p l e x i t y}}
+\text{Price} = \text{Base} _ {\text{cost}} \times \left(1 + R _ {\text{regional}}\right) \times S _ {\text{complexity}}
 $$
 
 - Base_cost: Minimum cost to generate/deliver proof
@@ -1843,7 +1843,7 @@ Scope note: This section outlines future research areas. These are open problems
 Define BV (Bounded Verification) as a complexity class:
 
 $$
-\mathrm {B V} = \{L \mid \exists \text {v e r i f i e r} V, \forall x \in L: V (x) \text {h a l t s} \leq T (| x |) \wedge \operatorname {m e m} (V) \leq M (| x |) \}
+\mathrm{BV} = \{L \mid \exists \text{verifier} V, \forall x \in L: V (x) \text{halts} \leq T (| x |) \wedge \operatorname{mem} (V) \leq M (| x |) \}
 $$
 
 Open questions:
@@ -1865,7 +1865,7 @@ Approach: Model refusal propagation as a diffusion process on network graphs. An
 Hypothesis: There exists a fundamental energy lower bound for verification:
 
 $$
-E _ {\min } \geq k _ {B} \cdot T \cdot \ln (2) \cdot \text {b i t s}
+E _ {\min } \geq k _ {B} \cdot T \cdot \ln (2) \cdot \text{bits}
 $$
 
 Where  $k_{B}$  is Boltzmann's constant,  $T$  is temperature.

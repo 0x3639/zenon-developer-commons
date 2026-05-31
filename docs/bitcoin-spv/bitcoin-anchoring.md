@@ -6,5 +6,5 @@ This document presents research on Bitcoin anchoring approaches for the Zenon Ne
 
 ## Download
 
-<a href="bitcoin_anchoring.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/bitcoin-anchoring.pdf)
 

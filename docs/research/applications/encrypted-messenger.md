@@ -1,5 +1,9 @@
 # Resilient Encrypted Messaging on Zenon Network
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/encrypted-messenger.pdf).
+:::
+
 A Cryptographic Communication Primitive for Hostile and Disconnected Environments
 
 Research Roadmap — Exploratory Analysis

@@ -182,19 +182,19 @@ Checkpoint submitters earn:
 For an attacker to profit from false submissions:
 
 $$
-\text{AttackProfit} = \text{Value extracted} - \text{Bond lost} - \text{Reputation cost}
+\text{AttackProfit} = \text{Valueextracted} - \text{Bondlost} - \text{Reputationcost}
 $$
 
 With proper bond sizing:
 $$
-B \ge \frac{\text{Max exploitable value}}{\alpha}
+B \ge \frac{\text{Maxexploitablevalue}}{\alpha}
 $$
 
 ### 7.2 Relayer Profitability
 
 Break-even condition:
 $$
-\text{Revenue} \ge \text{Infrastructure cost} + \text{Capital cost of bond} + \text{Risk premium}
+\text{Revenue} \ge \text{Infrastructurecost} + \text{Capitalcostofbond} + \text{Riskpremium}
 $$
 
 Where capital cost = bond × opportunity cost rate.

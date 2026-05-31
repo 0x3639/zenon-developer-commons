@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Bitcoin's Unfinished Constraint
 
 ## Why verification-first systems stalled—and where the line of thought quietly resumed

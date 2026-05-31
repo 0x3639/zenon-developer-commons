@@ -18,7 +18,7 @@ This specification defines a platform-agnostic, deterministic Bitcoin SPV verifi
 The verifier establishes the truth of statement $S$:
 
 $$
-S(tx, z) := \text{"Bitcoin transaction } tx \text{ is included in the canonical Bitcoin chain and buried under } z \text{ blocks."}
+S(tx, z) := \text{"Bitcointransaction } tx \text{ isincludedinthecanonicalBitcoinchainandburiedunder } z \text{ blocks."}
 $$
 
 The *canonical Bitcoin chain* is defined as the valid header chain with **maximal cumulative proof-of-work**, per standard Bitcoin consensus rules.
@@ -72,14 +72,14 @@ A Merkle branch proves transaction inclusion:
 | siblings | array of 32 bytes | Sibling hashes at each tree level |
 | positions | array of bits | Left (0) or right (1) position at each level |
 
-The maximum branch depth for Bitcoin is $\lceil \log_2(\text{max\_txs}) \rceil$. For blocks up to 4MB, this is approximately 14 levels.
+The maximum branch depth for Bitcoin is $\lceil \log_2(\text{max\\_txs}) \rceil$. For blocks up to 4MB, this is approximately 14 levels.
 
 ### 3.4 Proof Package
 
 The complete proof package submitted to the verifier:
 
 $$
-\pi := (H_{0..n},\; tx,\; \text{merkle\_branch},\; b)
+\pi := (H_{0..n},\; tx,\; \text{merkle\\_branch},\; b)
 $$
 
 | Component | Description |
@@ -110,7 +110,7 @@ where $T_i$ is the difficulty target extracted from $H_i.\text{bits}$.
 Headers form a valid chain iff for all $i \in [1, n]$:
 
 $$
-H_i.\text{prev\_block} = \text{BlockHash}(H_{i-1})
+H_i.\text{prev\\_block} = \text{BlockHash}(H_{i-1})
 $$
 
 ### 4.3 Chainwork Computation
@@ -186,13 +186,13 @@ $$
 For all $i \in [1, n]$:
 
 $$
-H_i.\text{prev\_block} = \text{BlockHash}(H_{i-1})
+H_i.\text{prev\\_block} = \text{BlockHash}(H_{i-1})
 $$
 
 ### 5.4 Merkle Inclusion
 
 $$
-\text{MerkleReconstruct}(tx, \text{merkle\_branch}) = H_b.\text{merkle\_root}
+\text{MerkleReconstruct}(tx, \text{merkle\\_branch}) = H_b.\text{merkle\\_root}
 $$
 
 ### 5.5 Confirmation Depth
@@ -337,7 +337,7 @@ This bound applies to the Bitcoin domain and is independent of Zenon.
 
 ## 12. References
 
-- [Bitcoin SPV Feasibility](/bitcoin-spv/feasibility)
+- [Bitcoin SPV Feasibility](/bitcoin-spv/interoperability/feasibility)
 - [Bitcoin Developer Reference: Block Headers](https://developer.bitcoin.org/reference/block_chain.html)
 - [BIP 37: Merkle Branch Verification](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki)
 - Nakamoto, S. "Bitcoin: A Peer-to-Peer Electronic Cash System" (2008), Section 8

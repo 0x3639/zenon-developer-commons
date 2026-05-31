@@ -1,12 +1,12 @@
 ---
-title: For Enthusiasts & Investors
-sidebar_label: For Enthusiasts
+title: Learn the Basics
+sidebar_label: Learn the Basics
 sidebar_position: 1
-slug: /for-enthusiasts
+slug: /learn
 description: A narrative-first path into Zenon — the big ideas, in plain language.
 ---
 
-# For Enthusiasts & Investors
+# Learn the Basics
 
 You don't need to read a specification to understand why Zenon is different. Start with the story, then go as deep as you like.
 

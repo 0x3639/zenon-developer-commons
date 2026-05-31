@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Bitcoin’s Unfinished Constraint Part III
 
 ## Abstract

@@ -1,5 +1,9 @@
 # Composable Bitcoin Verification for Genesis-Anchored Light Clients
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/composable-bitcoin-verification.pdf).
+:::
+
 December 2025
 
 # Abstract
@@ -31,7 +35,7 @@ We assume the existence of a genesis-anchored lineage verification primitive sat
 Formally:
 
 $$
-\forall G ^ {\prime}, G ^ {\prime} \neq G \Rightarrow C _ {G ^ {\prime}} \notin \text {B i t c o i n} [ h ]
+\forall G ^ {\prime}, G ^ {\prime} \neq G \Rightarrow C _ {G ^ {\prime}} \notin \text{Bitcoin} [ h ]
 $$
 
 This establishes:
@@ -87,7 +91,7 @@ Let  $(x, P = xG)$  be a Schnorr keypair over an elliptic curve group.
 A Schnorr signature  $\sigma = (R, s)$  over message  $m$  satisfies:
 
 $$
-\mathsf {s G} = \textsf {R} + \textsf {H} (\textsf {R} | | \textsf {P} | | \textsf {m}) \mathsf {P}
+\mathsf{sG} = \textsf {R} + \textsf {H} (\textsf {R} | | \textsf {P} | | \textsf {m}) \mathsf{P}
 $$
 
 Properties critical for light clients:
@@ -95,7 +99,7 @@ Properties critical for light clients:
 # 1. Linearity
 
 $$
-\Sigma \mathrm {S} _ {\mathrm {i}} \mathrm {G} = \Sigma \mathrm {R} _ {\mathrm {i}} + \mathrm {H} (\cdot) \Sigma \mathrm {P} _ {\mathrm {i}}
+\Sigma \mathrm{S} _ {\mathrm{i}} \mathrm{G} = \Sigma \mathrm{R} _ {\mathrm{i}} + \mathrm{H} (\cdot) \Sigma \mathrm{P} _ {\mathrm{i}}
 $$
 
 2. Aggregation: Multiple signatures over the same message can be compressed into a single constant-size proof.
@@ -322,7 +326,7 @@ Layout: Left-to-right pipeline with 4 columns, connected by directional arrows. 
 
 - Box A: "Bitcoin Tx (Taproot output / spend path / OP_RETURN if used)"
 
-- Visual: Rectangle with Bitcoin logo or "■" symbol
+- Visual: Rectangle with Bitcoin logo or "\blacksquare" symbol
 
 - Sub-labels: "txid: 0x3a7f...", "Output: P2TR script"
 

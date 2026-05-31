@@ -4,7 +4,7 @@ This paper defines a bounded verification primitive for verifying local state ag
 
 ## Download
 
-<a href="bounded_inclusion_without_merkle_final.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/bounded-inclusion.pdf)
 
 ## Related Documents
 

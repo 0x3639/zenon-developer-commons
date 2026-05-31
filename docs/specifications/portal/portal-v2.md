@@ -186,8 +186,8 @@ A gossip residual layer is preserved as an informational liveness mechanism in A
 | `musig2_agg_key` | MuSig2 aggregate of `deposit_key` and `pk_u` |
 | `taproot_output_key` | Final P2TR output key (Taproot-tweaked `musig2_agg_key`) |
 | `t` | Adaptor secret scalar |
-| `σ■` | Adaptor pre-signature |
-| `σ` | Completed Schnorr signature (`σ■ + t`) |
+| `σ\blacksquare` | Adaptor pre-signature |
+| `σ` | Completed Schnorr signature (`σ\blacksquare + t`) |
 | `H_tweak` | Tagged hash function for key derivation |
 | `tagged_hash(tag, msg)` | BIP-340 tagged hash |
 
@@ -397,14 +397,14 @@ taproot_output_key := taproot_tweak(musig2_agg_key, merkle_root)   // per BIP-34
 | Path | Spending Condition | Who Controls | Use Case |
 |---|---|---|---|
 | Key path | Valid Schnorr sig under `taproot_output_key = MuSig2(deposit_key_point, pk_u)` | FROST threshold (for deposit_key) + depositor BOTH must cooperate | Clean bilateral exit; NOT standard withdrawal path |
-| Leaf 1 (script path) | Adaptor withdrawal: relayer provides σ■; holder completes σ = σ■ + t | Relayer (adaptor) + authorized holder (t) + Zenon IsTier1 gate | Standard cooperative withdrawal for Tier 1 holders |
+| Leaf 1 (script path) | Adaptor withdrawal: relayer provides σ\blacksquare; holder completes σ = σ\blacksquare + t | Relayer (adaptor) + authorized holder (t) + Zenon IsTier1 gate | Standard cooperative withdrawal for Tier 1 holders |
 | Leaf 2 (script path) | `pk_u` signature + ABSOLUTE_EXPIRY elapsed | Depositor alone | Unilateral exit backstop; unconditional after timelock |
 
 #### 5.14.4 Relayer Signing Under Per-Deposit Key Derivation
 
 Relayers produce adaptor pre-signatures via FROST partial signatures under the `deposit_key_point` for each UTXO. Because `deposit_key_point = frost_epoch_key + H_tweak(...) · G`, relayers can compute the per-deposit key deterministically given `frost_epoch_key` and `deposit_id`. The FROST signing protocol is unchanged; the per-deposit key derivation is an additive tweak applied before signing.
 
-Each adaptor pre-signature `σ■` is bound to the specific `deposit_key_point` of its UTXO. Adaptor pre-signatures from one deposit cannot be applied to another.
+Each adaptor pre-signature `σ\blacksquare` is bound to the specific `deposit_key_point` of its UTXO. Adaptor pre-signatures from one deposit cannot be applied to another.
 
 #### 5.14.5 Deposit Construction Protocol
 
@@ -485,7 +485,7 @@ if deposit.protocol_version >= CURRENT and msg.type == ChainDelegationExtension:
 
 - **Superseded-holder race condition (KL #45):** ELIMINATED BY DESIGN. There is exactly one holder of `t` at any time.
 - **Off-protocol race:** the designated holder retains `t` after delegation. Collusion with a compromised relayer is bounded by the selection of the delegate.
-- **Depositor revocation:** the depositor can submit a `RevocationMsg` to Zenon, invalidating the delegate's Tier 1 status. This does not prevent an off-protocol Bitcoin spend if the delegate has already obtained `σ■` through relayer complicity.
+- **Depositor revocation:** the depositor can submit a `RevocationMsg` to Zenon, invalidating the delegate's Tier 1 status. This does not prevent an off-protocol Bitcoin spend if the delegate has already obtained `σ\blacksquare` through relayer complicity.
 - **Leaf 2 depositor backstop:** always available to the depositor after `ABSOLUTE_EXPIRY`.
 
 #### 7.8.4 Limitations
@@ -532,7 +532,7 @@ Multi-hop chains extend via `DerivedDelegationCert`, signed by the current chain
 3. Contract publishes `DepositorCompletionRequest`.
 4. Depositor computes `t = H_adaptor(sk_u || intent_id)` and submits `AdaptorCompletionMsg`.
 5. Relayer retrieves `t`, obtains FROST partial signature `σ_frost` under `deposit_key_point`, publishes `AdaptorPreSigBlob`.
-6. Certificate chain tip uses `σ■` and `t` to compute `σ = σ■ + t` and broadcasts.
+6. Certificate chain tip uses `σ\blacksquare` and `t` to compute `σ = σ\blacksquare + t` and broadcasts.
 
 If depositor does not respond within `DEPOSITOR_COMPLETION_TIMEOUT`, the request enters `PendingDepositorCompletion` state. Leaf 2 remains available to the depositor after `ABSOLUTE_EXPIRY`.
 
@@ -563,8 +563,8 @@ The standard cooperative withdrawal proceeds through Leaf 1 for Tier 1 holders:
 1. Authorized holder submits `WithdrawalClaimMsg` to Zenon, specifying `intent_id` and destination Bitcoin address.
 2. Zenon contract verifies `IsTier1`, locks the `SpendIntent`, and emits `SpendIntentLocked`.
 3. Assigned relayer computes FROST partial signatures under `deposit_key_point` for the specified UTXO.
-4. Relayer publishes `AdaptorPreSigBlob` containing `σ■`.
-5. Authorized holder obtains `t` (from direct delegation or capability delegation flow), computes `σ = σ■ + t`, and broadcasts the Bitcoin transaction spending via Leaf 1.
+4. Relayer publishes `AdaptorPreSigBlob` containing `σ\blacksquare`.
+5. Authorized holder obtains `t` (from direct delegation or capability delegation flow), computes `σ = σ\blacksquare + t`, and broadcasts the Bitcoin transaction spending via Leaf 1.
 6. `t` is extracted from the broadcast transaction by the relayer, completing the Zenon-side accounting.
 
 ### 8.6 Secondary Holder Withdrawal Initiation
@@ -744,11 +744,11 @@ The following are irreducible limits of the current Bitcoin scripting model:
 - Every Tier 1 depositor retains permanent Bitcoin-native Leaf 2 exit capability after `ABSOLUTE_EXPIRY`. This requires only the depositor's private key and that `ABSOLUTE_EXPIRY` has elapsed.
 - UTXO atomicity: each UTXO can be spent exactly once.
 - Key-path theft per deposit: requires simultaneous compromise of `deposit_key_point` (requiring FROST threshold compromise + knowledge of `deposit_id`) AND depositor key `pk_u`. FROST epoch compromise alone is not sufficient. Each deposit is an independent target.
-- Adaptor binding: a valid adaptor pre-signature `σ■` that is completed to `σ` reveals the adaptor secret `t`. Mathematical consequence of Schnorr adaptor signature properties.
+- Adaptor binding: a valid adaptor pre-signature `σ\blacksquare` that is completed to `σ` reveals the adaptor secret `t`. Mathematical consequence of Schnorr adaptor signature properties.
 
 **Conditional Guarantees (Hold Given Honest Majority Assumptions)**
 
-- Tier 1 single-hop secret delegation: cooperative exit for the designated holder requires relayer providing `σ■` through proper `WithdrawalClaimMsg` flow, IsTier1 passing, and designated holder possessing `t`. No race condition with prior holders (single-hop: no prior holders exist).
+- Tier 1 single-hop secret delegation: cooperative exit for the designated holder requires relayer providing `σ\blacksquare` through proper `WithdrawalClaimMsg` flow, IsTier1 passing, and designated holder possessing `t`. No race condition with prior holders (single-hop: no prior holders exist).
 - Tier 1 capability delegation: cooperative exit for certificate chain tip requires depositor availability. If depositor is permanently unavailable: Leaf 2 is the backstop for the depositor.
 - SPV verification safety: if the header relay quorum maintains an honest majority using a Bitcoin implementation distinct from the SPV verifier, SPV consensus divergence is converted to an observable deposit pause rather than silent unbounded eBTC minting.
 - DKG transparency: if the Zenon contract successfully verifies DKG transcripts and all registered relayers participate, silent cartel formation through parallel DKG is prevented.
@@ -756,7 +756,7 @@ The following are irreducible limits of the current Bitcoin scripting model:
 **Economically Deterred — Hold Given Rational-Actor Assumptions**
 
 - FROST threshold collusion: requires bond sacrifice, accountability key exposure, and epoch key compromise. Deterred when stealable TVL per deposit < slashable bonds (circuit-breaker enforces at epoch level).
-- Relayer providing `σ■` outside protocol flow: requires accountability key forfeit and slashing. Deterred when bond value > expected gain per deposit.
+- Relayer providing `σ\blacksquare` outside protocol flow: requires accountability key forfeit and slashing. Deterred when bond value > expected gain per deposit.
 - Quorum node attesting to incorrect chain: permissionless challenge results in automatic bond slashing.
 
 ### 17.2 Known Limitations

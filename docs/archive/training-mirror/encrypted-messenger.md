@@ -6,7 +6,7 @@ This document presents research on encrypted messaging systems for the Zenon Net
 
 ## Download
 
-<a href="02_encrypted_messenger_research.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/encrypted-messenger.pdf)
 
 ---
 

@@ -1,28 +1,50 @@
 /**
- * Zenon Developer Commons — theme overrides.
+ * Zenon Developer Commons — theme.
+ * Palette matched to https://docs.0x3639.com (green-on-near-black).
  */
 
+/* Light mode: darker green primary for readable contrast on white. */
 :root {
-  --ifm-color-primary: #0a7d4f;
-  --ifm-color-primary-dark: #097147;
-  --ifm-color-primary-darker: #086a43;
-  --ifm-color-primary-darkest: #075737;
-  --ifm-color-primary-light: #0b8957;
-  --ifm-color-primary-lighter: #0c905b;
-  --ifm-color-primary-lightest: #0ea36a;
+  --ifm-color-primary: #00a417;
+  --ifm-color-primary-dark: #009415;
+  --ifm-color-primary-darker: #008b14;
+  --ifm-color-primary-darkest: #007210;
+  --ifm-color-primary-light: #00b419;
+  --ifm-color-primary-lighter: #00bd1a;
+  --ifm-color-primary-lightest: #00d81e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode (default): vivid green on near-black, matching the target site. */
 [data-theme='dark'] {
-  --ifm-color-primary: #2fd693;
-  --ifm-color-primary-dark: #1fc985;
-  --ifm-color-primary-darker: #1dbe7e;
-  --ifm-color-primary-darkest: #189d68;
-  --ifm-color-primary-light: #46dca0;
-  --ifm-color-primary-lighter: #52dea7;
-  --ifm-color-primary-lightest: #76e5ba;
+  --ifm-color-primary: #00e721;
+  --ifm-color-primary-dark: #00d01e;
+  --ifm-color-primary-darker: #00c41c;
+  --ifm-color-primary-darkest: #00a117;
+  --ifm-color-primary-light: #00fe24;
+  --ifm-color-primary-lighter: #0aff2d;
+  --ifm-color-primary-lightest: #2bff49;
+
+  --ifm-background-color: #0a0b0c;
+  --ifm-background-surface-color: #141517;
+  --ifm-navbar-background-color: #0a0b0c;
+  --ifm-footer-background-color: #0a0b0c;
+  --ifm-navbar-link-color: #ffffff;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar flush with the page background. */
+.navbar {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Footer background = page body background (match docs.0x3639.com). */
+.footer {
+  --ifm-footer-background-color: var(--ifm-background-color) !important;
+  background-color: var(--ifm-background-color) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 /* Persona cards on the homepage */
@@ -40,7 +62,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   background: var(--ifm-background-surface-color);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   text-decoration: none;
   color: inherit;
   height: 100%;
@@ -48,7 +70,8 @@
 
 .persona-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-color: var(--ifm-color-primary);
   text-decoration: none;
   color: inherit;
 }

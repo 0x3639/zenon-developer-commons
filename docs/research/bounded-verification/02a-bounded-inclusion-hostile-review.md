@@ -1,5 +1,9 @@
 # HOSTILE TECHNICAL REVIEW
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/bounded-inclusion-hostile-review.pdf).
+:::
+
 # Bounded Inclusion Without Merkle Trees
 
 Adversarial Implementation Analysis  $\cdot$  December 2025

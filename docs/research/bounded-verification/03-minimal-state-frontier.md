@@ -1,5 +1,9 @@
 # Minimal State Frontier Verification
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/minimal-state-frontier.pdf).
+:::
+
 # (Draft — Final Revision)
 
 Status: Exploratory research
@@ -120,7 +124,7 @@ Formally:
 
 \exists exists \pi i 1, \pi i 2 : \text{Verify}(\pi i 1, R 1) \land \text{Verify}(\pi i 2, R 2) \land
 
-(R 1, R 2 \text{on divergent chains})\land
+(R 1, R 2 \text{ondivergentchains})\land
 
 $\backslash \mathrm{pi}1\backslash \mathrm{vdash}s = x)\backslash \mathrm{land}\backslash \mathrm{pi}2\backslash \mathrm{vdash}s = y)\backslash \mathrm{land}x\backslash \mathrm{neg}y$
 
@@ -166,7 +170,7 @@ Formally, for proofs accepted at times  $i < j$  within retention window  $k$ :
 
 \text{Accept}(\pi_i, R_i) \land \text{Accept}(\pi_j, R_j) \land \text{(j - i)} \leq k)
 
-\Rightarrow \exists exists! \text{canonical chain} C: R_i \in C \land R_j \in C
+\Rightarrow \exists exists! \text{canonicalchain} C: R_i \in C \land R_j \in C
 
 where:
 
@@ -174,7 +178,7 @@ where:
 
 -  $F$  is the verifier's current frontier
 
--  $\text{[Verify]\_Chain}$  checks cryptographic ancestry via parent hashes
+-  $\text{[Verify]\\_Chain}$  checks cryptographic ancestry via parent hashes
 
 Critical qualifier: This invariant applies only to proofs within the retention window. Proofs referencing commitments outside the frontier ( $j - i > k$ ) cannot be verified for consistency with prior verifier state.
 
@@ -234,7 +238,7 @@ To verify proof  $\backslash p i$  against frontier  $F$ :
 
 4. If ancestry verification fails, reject (orphaned/forked commitment)
 
-5. Verify  $\backslash p i . \backslash t e x t\{\text{merkle\_path}\}$  authenticates ( $\backslash$ text{key},  $\backslash$ text{value}) under  $\backslash p i . \backslash t e x t\{\text{target\_root}\}$
+5. Verify  $\backslash p i . \backslash t e x t\{\text{merkle\\_path}\}$  authenticates ( $\backslash$ text{key},  $\backslash$ text{value}) under  $\backslash p i . \backslash t e x t\{\text{target\\_root}\}$
 
 6. Accept iff all checks pass
 
@@ -322,17 +326,17 @@ All accepted proofs ( $\mathsf{p}i$ -9 referencing  $R$ -9) are mutually consist
 
 In linear commitment chains with parent hashes, the frontier requires:
 
-F = \{ R_{}\text{tip}\}, k\text{most recent headers}\}
+F = \{ R_{}\text{tip}\}, k\text{mostrecentheaders}\}
 
 # Storage complexity:
 
-O(1)\text{current tip} + O(k)\text{retained headers}
+O(1)\text{currenttip} + O(k)\text{retainedheaders}
 
 For hash size  $h = 32$  bytes and header metadata  $m = 64$  bytes, total storage is approximately  $k$  times  $(h + m)$  bytes.
 
 For  $k = 100$ , this is ~10KB—feasible for browser environments.
 
-In DAG-structured chains, storage may increase to  $O(k \times \text{times} \times \text{text} \backslash_{\text{branching\_factor}})$  but remains bounded.
+In DAG-structured chains, storage may increase to  $O(k \times \text{times} \times \text{text} \backslash_{\text{branching\\_factor}})$  but remains bounded.
 
 # 10. Multi-Verifier Divergence
 
@@ -430,7 +434,7 @@ State retained:
 
 - Recent block headers within sync period
 
-- Bounded: O(\text{sync\_period\_length})
+- Bounded: O(\text{sync\\_period\\_length})
 
 # Detectable failures:
 
@@ -600,7 +604,7 @@ A verifier  $V$  with retention parameter  $k$  that accepts proofs  $\backslash
 
 [\text{height}\{R_{i}\} - \text{height}\{R_{j}\} ]  $\text{leg} k$
 
-\Rightarrow \exists exists! \text{canonical chain} C : R_i \in C \land R_j \in C
+\Rightarrow \exists exists! \text{canonicalchain} C : R_i \in C \land R_j \in C
 
 Where:
 

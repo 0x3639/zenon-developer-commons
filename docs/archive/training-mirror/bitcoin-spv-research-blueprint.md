@@ -4,7 +4,7 @@ This document provides a comprehensive research blueprint for implementing Bitco
 
 ## Download
 
-<a href="bitcoin_spv_zenon_research.pdf" target="_blank">Download the full research blueprint (PDF)</a>
+[Download the full research blueprint (PDF)](/pdf/research/bitcoin-spv-zenon-research.pdf)
 
 ## Related Documents
 

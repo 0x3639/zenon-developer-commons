@@ -1,7 +1,7 @@
 # Zenon Greenpaper Series
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/greenpaper.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/greenpaper.pdf).
 :::
 
 # A Verification-First Architecture for Dual-Ledger Systems
@@ -135,7 +135,7 @@ Definition 2.1 (Account-Chain Block):
 An account-chain block  $B_{A}$  is a tuple:
 
 $$
-B _ {A} = (h _ {\mathrm {p r e v}}, T X, \pi , \mathrm {m e t a d a t a})
+B _ {A} = (h _ {\mathrm{prev}}, T X, \pi , \mathrm{metadata})
 $$
 
 where:  $* h_{\mathrm{prev}} = H$  (previous block) links to the prior block,  $* TX$  is an ordered list of transactions modifying the account's state,  $* \pi$  is a cryptographic proof that  $TX$  represents a valid state transition, and  $*$  metadata includes auxiliary data (t timestamps, signatures, app-specific fields).
@@ -159,7 +159,7 @@ Each block must include a valid state-transition proof. Account-chains grow asyn
 A Momentum block  $M_{i}$  is a tuple:
 
 $$
-M _ {i} = \left(h _ {\text {p r e v}}, r _ {C}, t, \text {m e t a d a t a}\right)
+M _ {i} = \left(h _ {\text{prev}}, r _ {C}, t, \text{metadata}\right)
 $$
 
 where:  $* h_{\mathrm{prev}} = H(M_{i-1})$  links to the previous Momentum block,  $* r_C$  is the commitment root (Merkle root over the set  $C = \{c_1, c_2, \ldots, c_m\}$  of account-chain commitments),  $* t$  is the consensus timestamp, and  $*$  metadata includes consensus-specific data (signatures, nonce, etc.).
@@ -169,7 +169,7 @@ where:  $* h_{\mathrm{prev}} = H(M_{i-1})$  links to the previous Momentum block
 Each commitment  $c \in C$  is a tuple:
 
 $$
-c = (\mathrm {a d d r}, h _ {\mathrm {s n a p s h o t}}, \mathrm {h e i g h t})
+c = (\mathrm{addr}, h _ {\mathrm{snapshot}}, \mathrm{height})
 $$
 
 where: * addr = account address, *  $h_{\mathrm{snapshot}}$  = hash of account state at that height, * height = account-chain height when committed.
@@ -321,7 +321,7 @@ Definition 2.7 (Bounded Execution):
 An execution trace  $E$  is verifiable under  $R_V$  if and only if there exists a proof  $\pi_E$  such that:
 
 $$
-\mathrm {V e r i f y} (\pi_ {E}) = \mathrm {T R U E} \quad \mathrm {a n d} \quad \mathrm {C o s t} _ {\mathrm {v e r i f y}} (\pi_ {E}) \leq C _ {V}
+\mathrm{Verify} (\pi_ {E}) = \mathrm{TRUE} \quad \mathrm{and} \quad \mathrm{Cost} _ {\mathrm{verify}} (\pi_ {E}) \leq C _ {V}
 $$
 
 and  $|\pi_E| \leq S_V$  and BytesFetched  $(E) \leq B_V$ .
@@ -337,7 +337,7 @@ Definition 2.8 (State Retention Function):
 Let  $\rho(t)$  denote the retention policy governing stored data age. For each verifier  $V$ , the expected storage footprint satisfies:
 
 $$
-\mathbb {E} [ \text {S t o r e d B y t e s} _ {V} ] = \int_ {0} ^ {\infty} g _ {V} (t) \cdot \rho (t) d t \leq S _ {V}
+\mathbb{E} [ \text{StoredBytes} _ {V} ] = \int_ {0} ^ {\infty} g _ {V} (t) \cdot \rho (t) d t \leq S _ {V}
 $$
 
 where  $g_V(t)$  is the storage density function (bytes per unit time) for data of age  $t$ , and  $\rho(t) \in [0,1]$  is the retention probability at age  $t$ .
@@ -351,7 +351,7 @@ Every verification operation reduces to a logical predicate over cryptographic d
 Definition 2.9 (Verification Predicate):
 
 $$
-P (x, D, R _ {V}) \rightarrow \{\mathrm {T R U E}, \mathrm {F A L S E}, \mathrm {R E F U S E D} \}
+P (x, D, R _ {V}) \rightarrow \{\mathrm{TRUE}, \mathrm{FALSE}, \mathrm{REFUSED} \}
 $$
 
 where:  $* x =$  claim being verified (e.g., "Account A sent 5 ZNN to B");  $* D =$  set of data available to the verifier;  $* R_V =$  verifier's declared resource bounds.
@@ -373,7 +373,7 @@ This is the refusal-as-correctness principle.
 Let  $P_{1}, P_{2}, \ldots, P_{k}$  be independent predicates. Composition is defined as:
 
 $$
-P _ {\mathrm {a l l}} (x) = P _ {1} (x) \wedge P _ {2} (x) \wedge \ldots \wedge P _ {k} (x)
+P _ {\mathrm{all}} (x) = P _ {1} (x) \wedge P _ {2} (x) \wedge \ldots \wedge P _ {k} (x)
 $$
 
 Rule 2.1 (Refusal Propagation):
@@ -389,7 +389,7 @@ Refusal is an explicit and deterministic outcome, not an error. It preserves sou
 Definition 2.10 (Refusal Code Set):
 
 $$
-\mathcal {R} = \{\text {R E F U S E D \_ O U T \_ O F \_ S C O P E}, \text {R E F U S E D \_ D A T A \_ U N A V I A L B L E}, \text {R E F U S E D \_ C O S T \_ E X C E E D E D}
+\mathcal{R} = \{\text{REFUSED \\_OUT \\_OF \\_SCOPE}, \text{REFUSED \\_DATA \\_UNAVIALBLE}, \text{REFUSED \\_COST \\_EXCEEDED}
 $$
 
 Each refusal code maps to a distinct failure mode: * OUT_OF_SCOPE: The requested claim extends beyond verifier's declared history window. * DATA_UNAVAILABLE: Proofs missing from the network. * COST_EXCEED: Computation or bandwidth would exceed  $R_V$ .
@@ -425,7 +425,7 @@ Over time, state and proof data can grow without bound. Adaptive retention provi
 Each verifier defines a retention policy  $\rho(t) \in [0,1]$  specifying the probability (or deterministic choice) of retaining data of age  $t$ . Given a storage density function  $g_V(t)$  (bytes per unit time), the policy must satisfy:
 
 $$
-\mathbb {E} [ \text {S t o r e d B y t e s} _ {V} ] = \int_ {0} ^ {\infty} g _ {V} (t) \cdot \rho (t) d t \leq S _ {V}
+\mathbb{E} [ \text{StoredBytes} _ {V} ] = \int_ {0} ^ {\infty} g _ {V} (t) \cdot \rho (t) d t \leq S _ {V}
 $$
 
 with  $\rho(0) = 1$  (all fresh data retained) and  $\rho(t)$  non-increasing.
@@ -473,7 +473,7 @@ It requests from the network the account-chain segment  $B_{h - 1} \to B_h$  and
 # Step 5: Evaluate Predicate
 
 $$
-P (x, D, R _ {V}) = \left\{ \begin{array}{l l} \mathrm {T R U E} & \mathrm {i f V e r i f y} (\pi , h _ {\mathrm {s n a p s h o t}}) = \mathrm {T R U E a n d C o s t} _ {\mathrm {v e r i f y}} (\pi) \leq C _ {V} \\ \mathrm {F A L S E} & \mathrm {i f p r o o f s c r e p t o g r a p h i c a l l y c o n t r a d i c t t h e c l a i m} \\ \mathrm {R E F U S E D} & \mathrm {i f} \pi \mathrm {m i s s i n g o r c o s t e x c e e d s} R _ {V} \end{array} \right.
+P (x, D, R _ {V}) = \left\{ \begin{array}{l l} \mathrm{TRUE} & \mathrm{ifVerify} (\pi , h _ {\mathrm{snapshot}}) = \mathrm{TRUEandCost} _ {\mathrm{verify}} (\pi) \leq C _ {V} \\ \mathrm{FALSE} & \mathrm{ifproofscreptographicallycontradicttheclaim} \\ \mathrm{REFUSED} & \mathrm{if} \pi \mathrm{missingorcostexceeds} R _ {V} \end{array} \right.
 $$
 
 # Step 6: User Feedback
@@ -521,13 +521,13 @@ Proof-native applications (zApps) invert that relationship. Rather than replayin
 A zApp is an application that emits, for every state transition, a validity proof
 
 $$
-\pi : \operatorname {C o m p u t e} (\text {i n p u t}, \text {s t a t e}) \rightarrow (\text {o u t p u t}, \text {s t a t e} ^ {\prime})
+\pi : \operatorname{Compute} (\text{input}, \text{state}) \rightarrow (\text{output}, \text{state} ^ {\prime})
 $$
 
 such that
 
 $$
-\operatorname {V e r i f y} (\pi , \text {i n p u t}, \text {s t a t e}, \text {o u t p u t}, \text {s t a t e} ^ {\prime}) = \text {T R U E}
+\operatorname{Verify} (\pi , \text{input}, \text{state}, \text{output}, \text{state} ^ {\prime}) = \text{TRUE}
 $$
 
 under the soundness assumption of its proof system.
@@ -555,7 +555,7 @@ zApps may use any sound proof system that satisfies verification constraints. Ty
 Each proof system provides a deterministic verification function
 
 $$
-\operatorname {V e r i f y} (\pi , x) \to \{0, 1 \}
+\operatorname{Verify} (\pi , x) \to \{0, 1 \}
 $$
 
 whose cost is upper-bounded by a polynomial in  $\log(|x|)$ .
@@ -565,7 +565,7 @@ whose cost is upper-bounded by a polynomial in  $\log(|x|)$ .
 Every proof object includes:
 
 $$
-\pi = (\mathrm {p r o o f \_ b y t e s}, \mathrm {s c h e m a \_ h a s h}, \mathrm {p u b l i c \_ i n p u t s})
+\pi = (\mathrm{proof \\_bytes}, \mathrm{schema \\_hash}, \mathrm{public \\_inputs})
 $$
 
 The schema_hash ensures the verifier interprets proofs according to the correct circuit or constraint system.
@@ -583,7 +583,7 @@ The schema_hash ensures the verifier interprets proofs according to the correct 
 5. Verification: Verifiers evaluate:
 
 $$
-\mathrm {V e r i f y} (\nu k, \pi , \mathrm {p u b l i c \_ i n p u t s}) = \mathrm {T R U E} \quad \mathrm {a n d} \quad \mathrm {C o s t} _ {\mathrm {v e r i f y}} (\pi) \leq C _ {V}
+\mathrm{Verify} (\nu k, \pi , \mathrm{public \\_inputs}) = \mathrm{TRUE} \quad \mathrm{and} \quad \mathrm{Cost} _ {\mathrm{verify}} (\pi) \leq C _ {V}
 $$
 
 returning TRUE, FALSE, or REFUSED based on proof validity and resource constraints.
@@ -597,13 +597,13 @@ This lifecycle ensures every observable state change is accompanied by a verifia
 A block  $B_{z}$  in a zApp account-chain consists of
 
 $$
-B _ {z} = \left(h _ {\text {p r e v}}, \text {i n p u t s}, \text {o u t p u t s}, \pi , \text {m e t a d a t a}\right)
+B _ {z} = \left(h _ {\text{prev}}, \text{inputs}, \text{outputs}, \pi , \text{metadata}\right)
 $$
 
 and is valid if and only if
 
 $$
-\operatorname {V e r i f y} (\nu k, \pi , \text {i n p u t s}, \text {o u t p u t s}) = \mathrm {T R U E}
+\operatorname{Verify} (\nu k, \pi , \text{inputs}, \text{outputs}) = \mathrm{TRUE}
 $$
 
 Hence, state transitions are self-verifying; replay is unnecessary.
@@ -617,7 +617,7 @@ Multiple zApps can interoperate by composing their proofs.
 Given proofs  $\pi_1, \pi_2, \ldots, \pi_k$  over circuits  $C_1, \ldots, C_k$ , a composed proof  $\Pi$  verifies if
 
 $$
-\forall i, \operatorname {V e r i f y} \left(\nu k _ {i}, \pi_ {i}\right) = \mathrm {T R U E}
+\forall i, \operatorname{Verify} \left(\nu k _ {i}, \pi_ {i}\right) = \mathrm{TRUE}
 $$
 
 and an aggregation circuit verifies their joint correctness.
@@ -649,7 +649,7 @@ A simple proof-native token ledger illustrates these ideas.
 Constraints:
 
 $$
-\left\{ \begin{array}{l} \text {b a l a n c e} [ A ] \geq \text {a m o u n t} \\ \text {b a l a n c e} ^ {\prime} [ A ] = \text {b a l a n c e} [ A ] - \text {a m o u n t} \\ \text {b a l a n c e} ^ {\prime} [ B ] = \text {b a l a n c e} [ B ] + \text {a m o u n t} \end{array} \right.
+\left\{ \begin{array}{l} \text{balance} [ A ] \geq \text{amount} \\ \text{balance} ^ {\prime} [ A ] = \text{balance} [ A ] - \text{amount} \\ \text{balance} ^ {\prime} [ B ] = \text{balance} [ B ] + \text{amount} \end{array} \right.
 $$
 
 The proof attests that balances are updated correctly without exposing private data.
@@ -667,7 +667,7 @@ Definition 3.4 (Proof-Carried Computation):
 A computation  $f(x)$  is proof-carried if it emits  $(y, \pi)$  such that
 
 $$
-\operatorname {V e r i f y} (\nu k, \pi , x, y) = \mathrm {T R U E}
+\operatorname{Verify} (\nu k, \pi , x, y) = \mathrm{TRUE}
 $$
 
 The verifier never re-executes  $f$ ; it only validates  $\pi$ .
@@ -719,7 +719,7 @@ Definition 4.1 (External Verification Claim):
 A claim  $X$  about an external system  $S_{\mathrm{ext}}$  is a tuple:
 
 $$
-X = (S _ {\mathrm {e x t}}, \mathrm {s t a t e m e n t}, \mathrm {p r o o f}, \mathrm {r e f e r e n c e})
+X = (S _ {\mathrm{ext}}, \mathrm{statement}, \mathrm{proof}, \mathrm{reference})
 $$
 
 where:  $* S_{\mathrm{ext}}$  identifies the external system (e.g., Bitcoin mainnet),  $*$  statement is the factual claim (e.g., "txid  $T$  confirmed in block  $b$ "),  $*$  proof is the cryptographic proof attesting to the claim, and  $*$  reference includes consensus parameters such as block header hash.
@@ -729,7 +729,7 @@ Definition 4.2 (Composable External Verification):
 A CEV mechanism is a protocol that allows internal verifiers to check external claims within bounded resources. For claim  $X$ , the verification predicate evaluates to:
 
 $$
-\operatorname {V e r i f y} _ {\mathrm {C E V}} (X, D, R _ {V}) = \left\{ \begin{array}{l l} \mathrm {T R U E} & \text {i f a l l p r o o f s v a l i d a t e a n d c o s t s \leq R _ {V}} \\ \mathrm {F A L S E} & \text {i f p r o o f s c r e p t o g r a p h i c a l l y c o n t r a d i c t t h e c l a i m} \\ \mathrm {R E F U S E D} & \text {i f d a t a u n a v a i l a b l e o r c o s t s e x c e e d R _ {V}} \end{array} \right.
+\operatorname{Verify} _ {\mathrm{CEV}} (X, D, R _ {V}) = \left\{ \begin{array}{l l} \mathrm{TRUE} & \text {i f a l l p r o o f s v a l i d a t e a n d c o s t s \leq R _ {V}} \\ \mathrm{FALSE} & \text{ifproofscreptographicallycontradicttheclaim} \\ \mathrm{REFUSED} & \text {i f d a t a u n a v a i l a b l e o r c o s t s e x c e e d R _ {V}} \end{array} \right.
 $$
 
 # 4.3 Core Idea: External Proof Composition
@@ -743,13 +743,13 @@ Verifiers then check inclusion proofs against that root.
 An external commitment is a tuple:
 
 $$
-c _ {\mathrm {e x t}} = \left(S _ {\mathrm {e x t}}, h _ {\mathrm {h e a d e r}}, \text {h e i g h t}, \text {m e t a d a t a}\right)
+c _ {\mathrm{ext}} = \left(S _ {\mathrm{ext}}, h _ {\mathrm{header}}, \text{height}, \text{metadata}\right)
 $$
 
 anchored within a Momentum block:
 
 $$
-M _ {i} = (\ldots , C \cup \{c _ {\mathrm {e x t}} \}, \ldots)
+M _ {i} = (\ldots , C \cup \{c _ {\mathrm{ext}} \}, \ldots)
 $$
 
 where  $h_{\text{header}}$  is the hash of the external chain's block header at the specified height. This anchoring ties an external chain's verified state into the internal commitment chain without requiring continuous synchronization. The anchored commitment provides header hash authenticity, while consensus confidence (e.g., that the header represents the canonical chain with sufficient finality) requires additional header-chain evidence such as PoW linkage or confirmation depth within bounded resources. Verifiers seeking stronger guarantees may validate this additional evidence; otherwise they may refuse queries if the available evidence is insufficient for their security requirements, consistent with the refusal semantics of §2.7 and the consensus-agnostic design principle.
@@ -763,7 +763,7 @@ A verifier wishes to confirm that a Bitcoin transaction with hash txid was inclu
 A recent Momentum block  $M_{i}$  contains:
 
 $$
-c _ {\mathrm {e x t}} = (S _ {\mathrm {e x t}} = \mathrm {B i t c o i n}, h _ {\mathrm {h e a d e r}}, \mathrm {h e i g h t} = h)
+c _ {\mathrm{ext}} = (S _ {\mathrm{ext}} = \mathrm{Bitcoin}, h _ {\mathrm{header}}, \mathrm{height} = h)
 $$
 
 where  $h_{\mathrm{header}} = H(\mathrm{hdr}_h)$  is the hash of the Bitcoin block header at height  $h$ .
@@ -781,7 +781,7 @@ Verify that  $H(\mathrm{hdr}_h) = h_{\mathrm{header}}$  (matching the anchored c
 Compute the Merkle root from the transaction:
 
 $$
-\mathrm {r o o t} _ {\mathrm {c o m p u t e d}} = \mathrm {M e r k l e R o o t (t x i d}, P)
+\mathrm{root} _ {\mathrm{computed}} = \mathrm{MerkleRoot (txid}, P)
 $$
 
 where MerkleRoot applies the Merkle branch  $P$  to  $\mathsf{txid}$
@@ -790,12 +790,12 @@ Check if root_computed = hdr_h.merkle_root (the Merkle root field in the Bitcoin
 
 # Step 5: Verify Confirmation Depth (Consensus Evidence)
 
-To establish that the transaction is sufficiently confirmed: * Verify the header chain  $\mathrm{hdr}_h \to \mathrm{hdr}_{h+1} \to \ldots \to \mathrm{hdr}_{h+k}$  by checking: * Each header's prev_block_hash matches  $H(\text{previous header})$ . * Each header satisfies PoW validity by checking that  $H(\mathrm{hdr}_j) < \text{target}(\mathrm{hdr}_j)$ , where target  $(\mathrm{hdr}_j)$  is derived from the difficulty field (e.g., nBits) in  $\mathrm{hdr}_j$ . * If the verifier's policy requires  $k$  confirmations and the chain has valid PoW linkage for  $k$  blocks, the transaction is considered confirmed.
+To establish that the transaction is sufficiently confirmed: * Verify the header chain  $\mathrm{hdr}_h \to \mathrm{hdr}_{h+1} \to \ldots \to \mathrm{hdr}_{h+k}$  by checking: * Each header's prev_block_hash matches  $H(\text{previousheader})$ . * Each header satisfies PoW validity by checking that  $H(\mathrm{hdr}_j) < \text{target}(\mathrm{hdr}_j)$ , where target  $(\mathrm{hdr}_j)$  is derived from the difficulty field (e.g., nBits) in  $\mathrm{hdr}_j$ . * If the verifier's policy requires  $k$  confirmations and the chain has valid PoW linkage for  $k$  blocks, the transaction is considered confirmed.
 
 # Step 6: Evaluate Predicate
 
 $$
-P _ {\mathrm {B T C}} (\mathrm {t x i d}, h, k) = \left\{ \begin{array}{l l} \mathrm {T R U E} & \mathrm {i f r o o t} _ {\mathrm {c o m p u t e d}} = \mathrm {h d r} _ {h}. \mathrm {m e r k l e} _ {-} \mathrm {r o o t} \\ & \quad \mathrm {a n d h e a d e r c h a i n v a l i d f o r} k \mathrm {b l o c k s} \\ & \quad \mathrm {a n d C o s t} _ {\mathrm {v e r i f y}} \leq C _ {V} \\ \mathrm {F A L S E} & \mathrm {i f M e r k l e p r o o f o r h e a d e r c h a i n c r e p t o g r a p h i c a l l y i n v a l i d} \\ \mathrm {R E F U S E D} & \mathrm {i f d a t a u n a v a i l a b l e o r c o s t e x c e e d s} R _ {V} \end{array} \right.
+P _ {\mathrm{BTC}} (\mathrm{txid}, h, k) = \left\{ \begin{array}{l l} \mathrm{TRUE} & \mathrm{ifroot} _ {\mathrm{computed}} = \mathrm{hdr} _ {h}. \mathrm{merkle} _ {-} \mathrm{root} \\ & \quad \mathrm{andheaderchainvalidfor} k \mathrm{blocks} \\ & \quad \mathrm{andCost} _ {\mathrm{verify}} \leq C _ {V} \\ \mathrm{FALSE} & \mathrm{ifMerkleprooforheaderchaincreptographicallyinvalid} \\ \mathrm{REFUSED} & \mathrm{ifdataunavailableorcostexceeds} R _ {V} \end{array} \right.
 $$
 
 # Step 7: Output
@@ -807,7 +807,7 @@ If valid, the verifier declares the transaction confirmed under the external pro
 Definition 4.4 (External Verification Predicate):
 
 $$
-P _ {\mathrm {e x t}} (X, D, R _ {V}) = \left\{ \begin{array}{l l} \text {T R U E ,} & \text {i f a l l c r o p t o g r a p h i c c h e c k s p a s s a n d C o s t} _ {\mathrm {v e r i f y}} (D) \leq C _ {V}, \\ & \text {B y t e s F e t c h e d} (D) \leq B _ {V}, \text {B y t e s S t o r e d} (D) \leq S _ {V} \\ \text {F A L S E ,} & \text {i f p r o v i d e d c r o p t o g r a p h i c o b j e c t s c o n t r a d i c t t h e c l a i m} \\ \text {R E F U S E D ,} & \text {i f d a t a i s u n a v a i l a b l e , o u t o f s c o p e , o r r e s o u r c e b o u n d s w o u l d b e e x c} \end{array} \right.
+P _ {\mathrm{ext}} (X, D, R _ {V}) = \left\{ \begin{array}{l l} \text{TRUE ,} & \text{ifallcroptographiccheckspassandCost} _ {\mathrm{verify}} (D) \leq C _ {V}, \\ & \text{BytesFetched} (D) \leq B _ {V}, \text{BytesStored} (D) \leq S _ {V} \\ \text{FALSE ,} & \text{ifprovidedcroptographicobjectscontradicttheclaim} \\ \text{REFUSED ,} & \text{ifdataisunavailable , outofscope , orresourceboundswouldbeexc} \end{array} \right.
 $$
 
 This mirrors the bounded verification semantics of internal predicates (§2.6). External proofs must therefore be succinct and efficiently checkable.
@@ -851,7 +851,7 @@ Verifiers do not need to track all external headers. They only require recent on
 Let  $H_{\mathrm{ext}}$  be the external header set anchored up to height  $h$ . Verifiers need only store the last  $k$  headers satisfying
 
 $$
-\left| H _ {\mathrm {e x t}} \right| \leq f (S _ {V}, B _ {V})
+\left| H _ {\mathrm{ext}} \right| \leq f (S _ {V}, B _ {V})
 $$
 
 This ensures synchronization remains resource-bounded.
@@ -867,7 +867,7 @@ A zApp verifies that: * a Bitcoin payment occurred, and * an Ethereum contract e
 Both predicates can be combined:
 
 $$
-P _ {\mathrm {m u l t i}} = P _ {\mathrm {B T C}} \wedge P _ {\mathrm {E T H}}
+P _ {\mathrm{multi}} = P _ {\mathrm{BTC}} \wedge P _ {\mathrm{ETH}}
 $$
 
 By Refusal Propagation (§2.6.2), if either is REFUSED, the entire composite predicate is REFUSED.
@@ -883,13 +883,13 @@ Definition 4.5 (Aggregated External Proof):
 An aggregated proof  $\Pi_{\mathrm{ext}}$  combines multiple external verifications:
 
 $$
-\Pi_ {\mathrm {e x t}} = \{(\pi_ {\mathrm {B T C}}, \nu k _ {\mathrm {B T C}}), (\pi_ {\mathrm {E T H}}, \nu k _ {\mathrm {E T H}}), \ldots \}
+\Pi_ {\mathrm{ext}} = \{(\pi_ {\mathrm{BTC}}, \nu k _ {\mathrm{BTC}}), (\pi_ {\mathrm{ETH}}, \nu k _ {\mathrm{ETH}}), \ldots \}
 $$
 
 A meta-verifier validates all subproofs under bounded cost:
 
 $$
-\forall i, \mathrm {V e r i f y} (\nu k _ {i}, \pi_ {i}) = \mathrm {T R U E} \quad \mathrm {a n d} \quad \sum_ {i} \mathrm {C o s t} _ {\mathrm {v e r i f y}} (\pi_ {i}) \leq C _ {V}
+\forall i, \mathrm{Verify} (\nu k _ {i}, \pi_ {i}) = \mathrm{TRUE} \quad \mathrm{and} \quad \sum_ {i} \mathrm{Cost} _ {\mathrm{verify}} (\pi_ {i}) \leq C _ {V}
 $$
 
 This produces efficient multi-chain verification that remains within client limits.
@@ -909,7 +909,7 @@ The first external commitment is embedded at genesis as a trust root. From that 
 Definition 4.6 (External Trust Root):
 
 $$
-T _ {\mathrm {e x t}} = (S _ {\mathrm {e x t}}, h _ {\mathrm {h e a d e r}} ^ {(0)}, \mathrm {m e t a d a t a})
+T _ {\mathrm{ext}} = (S _ {\mathrm{ext}}, h _ {\mathrm{header}} ^ {(0)}, \mathrm{metadata})
 $$
 
 All verifiable external claims must derive from  $T_{\mathrm{ext}}$  by recursive commitments.
@@ -993,13 +993,13 @@ At any point, if data or cost exceed  $R_{V}$ , the verifier returns a refusal c
 Definition 5.1 (Verification Pipeline):
 
 $$
-P _ {\mathrm {s y s t e m}} (x) = P _ {\mathrm {m o m e n t u m}} (x) \land P _ {\mathrm {a c c o u n t}} (x) \land P _ {\mathrm {p r o o f}} (x) \land P _ {\mathrm {e x t e r n a l}} (x)
+P _ {\mathrm{system}} (x) = P _ {\mathrm{momentum}} (x) \land P _ {\mathrm{account}} (x) \land P _ {\mathrm{proof}} (x) \land P _ {\mathrm{external}} (x)
 $$
 
 withrefusalpropagation  $(\S 2.6.2)$
 
 $$
-\exists i, P _ {i} (x) = \mathrm {R E F U S E D} \Rightarrow P _ {\mathrm {s y s t e m}} (x) = \mathrm {R E F U S E D}
+\exists i, P _ {i} (x) = \mathrm{REFUSED} \Rightarrow P _ {\mathrm{system}} (x) = \mathrm{REFUSED}
 $$
 
 This closure ensures global soundness without global execution.
@@ -1031,13 +1031,13 @@ $O(\log m)$  hash operations
 # Bandwidth (account segment retrieval):
 
 $$
-O \left(L _ {A} \left(\sigma_ {B} + \sigma_ {\pi}\right)\right) \text {b y t e s}
+O \left(L _ {A} \left(\sigma_ {B} + \sigma_ {\pi}\right)\right) \text{bytes}
 $$
 
 # Computation (account proof verification):
 
 $$
-O (L _ {A} \cdot C _ {\mathrm {v e r i f y}}) \mathrm {o p e r a t i o n s , w h e r e} C _ {\mathrm {v e r i f y}} \mathrm {i s b o u n d e d b y} C _ {V}
+O (L _ {A} \cdot C _ {\mathrm{verify}}) \mathrm{operations , where} C _ {\mathrm{verify}} \mathrm{isboundedby} C _ {V}
 $$
 
 The commitment membership proof scales logarithmically with commitments per block; account-chain verification cost scales linearly with segment length and depends on the specific proof system used.
@@ -1388,7 +1388,7 @@ Appendix E makes DA explicit via refusal. To reduce "DA hand-waving," DA can be 
 
 # E.A DA-Detectability (mandatory)
 
-Definition (DA-Detectability). For any query q whose verification requires an object o (proof, segment, header suffix), an honest verifier operating under  $(\mathrm{B\_V},\Delta)$  either (i) retrieves o from the serving layer within its bounds, or (ii) returns an explicit refusal code indicating which dependency is missing (e.g., REFUSED_DATA_UNAVAILABLE, REFUSEDHEADER MISSING). No silent degradation of trust is permitted.
+Definition (DA-Detectability). For any query q whose verification requires an object o (proof, segment, header suffix), an honest verifier operating under  $(\mathrm{B\\_V},\Delta)$  either (i) retrieves o from the serving layer within its bounds, or (ii) returns an explicit refusal code indicating which dependency is missing (e.g., REFUSED_DATA_UNAVAILABLE, REFUSEDHEADER MISSING). No silent degradation of trust is permitted.
 
 # E.B DA-Retrievability (recommended target)
 
@@ -1422,7 +1422,7 @@ Recommended default for Phase 0: user-pays with optional sponsor subsidies. Fees
 
 Let each additional composition layer consume at least  $(\Delta S, \Delta B, \Delta C)$  of storage, bandwidth, and computation for a target verifier class. Then a conservative bound is:
 
-Corollary.  $\mathrm{d\_max} \leq \min(\text{floor(S\_V} / \Delta \mathrm{S}), \text{floor(B\_V} / \Delta \mathrm{B}), \text{floor(C\_V} / \Delta \mathrm{C}))$ .
+Corollary.  $\mathrm{d\\_max} \leq \min(\text{floor(S\\_V} / \Delta \mathrm{S}), \text{floor(B\\_V} / \Delta \mathrm{B}), \text{floor(C\\_V} / \Delta \mathrm{C}))$ .
 
 # 3.B Worked example (mobile verifier)
 

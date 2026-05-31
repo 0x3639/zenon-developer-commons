@@ -1,7 +1,7 @@
 # The Network of Momentum (NoM) — Decoded and Expanded Whitepaper (Community Reconstruction)
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/whitepaper-decoded.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/whitepaper-decoded.pdf).
 :::
 
 Status: Community-authored reconstruction (interpretive, non-normative). Purpose: Decode and clarify the original Network of Momentum (NoM) / Zenon early whitepaper intent (circa 2020).
@@ -575,7 +575,7 @@ Safety and liveness hold under the honest-majority assumption: fewer than one-th
 Each node's verification function operates within resource constraints:
 
 $$
-\operatorname {V e r i f y} _ {v} (p) \rightarrow \{\top , \bot , \text {R E F U S E} \}
+\operatorname{Verify} _ {v} (p) \rightarrow \{\top , \bot , \text{REFUSE} \}
 $$
 
 Where:
@@ -691,13 +691,13 @@ Clients query the ledger through Representatives (typically Sentinels) to obtain
 Each query returns a proof bundle:
 
 $$
-\Pi (Q) = \{\text {c o m m i t m e n t s , s i g n a t u r e s , P o W}
+\Pi (Q) = \{\text{commitments , signatures , PoW}
 $$
 
 Verification is performed locally:
 
 $$
-\operatorname {V e r i f y} _ {v} (\Pi (Q)) = \top
+\operatorname{Verify} _ {v} (\Pi (Q)) = \top
 $$
 
 if valid within resource constraints, or REFUSE if incomplete.
@@ -717,7 +717,7 @@ Let:
 Each finalized transaction is appended:
 
 $$
-\forall t \in O _ {\epsilon} \left(D _ {\epsilon}\right): \operatorname {a p p e n d} (t)
+\forall t \in O _ {\epsilon} \left(D _ {\epsilon}\right): \operatorname{append} (t)
 $$
 
 This ensures every honest node shares an identical ledger state after finalization.
@@ -731,7 +731,7 @@ Table 5: Verification scope by node type
 Resource hierarchy:
 
 $$
-R _ {V} ^ {\mathrm {(p i l l a r)}} \gg R _ {V} ^ {\mathrm {(s e n t i n e l)}} \gg R _ {V} ^ {\mathrm {(s e n t r y)}}
+R _ {V} ^ {\mathrm{(pillar)}} \gg R _ {V} ^ {\mathrm{(sentinel)}} \gg R _ {V} ^ {\mathrm{(sentry)}}
 $$
 
 This allows scalability without compromising correctness.
@@ -785,7 +785,7 @@ Consensus proceeds through epochs. Each Pillar maintains:
 Once:
 
 $$
-\sum_ {i \in \mathcal {F} _ {\epsilon}} w _ {i} \geq \frac {2}{3} W _ {\epsilon} + \delta
+\sum_ {i \in \mathcal{F} _ {\epsilon}} w _ {i} \geq \frac {2}{3} W _ {\epsilon} + \delta
 $$
 
 the epoch finalizes.
@@ -799,7 +799,7 @@ Due to asynchronous communication, not all Pillars see identical data instantly.
 Let  $\operatorname{Know}(p, \epsilon)$  represent transactions known to Pillar  $p$  at epoch  $\epsilon$ . A transaction becomes decidable once:
 
 $$
-\sum_ {i \in \mathcal {P}} \mathbf {1} [ t \in \operatorname {K n o w} (i, \epsilon) ] \cdot w _ {i} \geq \frac {2}{3} W _ {\epsilon} + \delta
+\sum_ {i \in \mathcal{P}} \mathbf{1} [ t \in \operatorname{Know} (i, \epsilon) ] \cdot w _ {i} \geq \frac {2}{3} W _ {\epsilon} + \delta
 $$
 
 This ensures eventual convergence to a single canonical ordering.
@@ -809,7 +809,7 @@ This ensures eventual convergence to a single canonical ordering.
 All Pillars deterministically derive the same transaction order:
 
 $$
-O _ {\epsilon} ^ {(p)} = O _ {\epsilon} ^ {(q)} \quad \forall \text {h o n e s t} p, q
+O _ {\epsilon} ^ {(p)} = O _ {\epsilon} ^ {(q)} \quad \forall \text{honest} p, q
 $$
 
 Consensus therefore requires no explicit votes—only shared observation of DAG structure.
@@ -857,7 +857,7 @@ $\operatorname{State}(A) \in \{\text{Proposed}, \text{Provisioned}, \text{Runnin
 Execution costs resources according to:
 
 $$
-\operatorname {P r i c e} (A) = \left(p _ {\mathrm {c p u}}, p _ {\mathrm {m e m}}, p _ {\mathrm {n e t}}, p _ {\mathrm {d i s k}}\right)
+\operatorname{Price} (A) = \left(p _ {\mathrm{cpu}}, p _ {\mathrm{mem}}, p _ {\mathrm{net}}, p _ {\mathrm{disk}}\right)
 $$
 
 A gas-like fee model funds execution, ensuring bounded computation.
@@ -867,13 +867,13 @@ A gas-like fee model funds execution, ensuring bounded computation.
 zApps may emit cryptographic proofs of state transitions:
 
 $$
-S: (s _ {\mathrm {i n}}, x) \mapsto s _ {\mathrm {o u t}}
+S: (s _ {\mathrm{in}}, x) \mapsto s _ {\mathrm{out}}
 $$
 
 producing proof  $\pi_S$  such that:
 
 $$
-\operatorname {C h e c k} (S, \pi_ {S}) = \top
+\operatorname{Check} (S, \pi_ {S}) = \top
 $$
 
 Light clients can verify or refuse (REFUSE) if resource limits are exceeded—preserving local correctness regardless of resource capacity.
@@ -1101,7 +1101,7 @@ $$
 Consensus broadcast among Pillars is quadratic globally or linear per node:
 
 $$
-O (N ^ {2}) \text {g l o b a l l y ,} O (N) \text {p e r P i l l a r .}
+O (N ^ {2}) \text{globally ,} O (N) \text{perPillar .}
 $$
 
 Each Pillar must send messages to every other Pillar for epoch finalization, ensuring complete state synchronization. Expected epoch duration remains approximately constant under stable conditions, with convergence time bounded by network latency rather than computation.
@@ -1137,7 +1137,7 @@ Users select multiple Representatives (Sentinels) to connect for redundancy and 
 The probability that a user connects exclusively to compromised Representatives:
 
 $$
-P _ {\mathrm {f a i l}} = f ^ {k}
+P _ {\mathrm{fail}} = f ^ {k}
 $$
 
 As  $k$  increases,  $P_{\mathrm{fail}}$  decays exponentially, ensuring strong resilience even if a significant portion of Sentinels are malicious.
@@ -1193,7 +1193,7 @@ Not Specified in Draft (Open Questions):
 If network disruption prevents finalization after several epochs, the shared coin mechanism guarantees eventual progress probabilistically:
 
 $$
-P _ {\mathrm {f i n i s h}} \rightarrow 1
+P _ {\mathrm{finish}} \rightarrow 1
 $$
 
 as epochs increase.
@@ -1407,7 +1407,7 @@ Unikernels fit the NoM philosophy by supporting:
 Compiled as immutable images with hash-based identity:
 
 $$
-\mathrm {I D} (U) = H (\text {u n i k e r n e l \_ i m a g e \_ b y t e s})
+\mathrm{ID} (U) = H (\text{unikernel \\_image \\_bytes})
 $$
 
 Can be distributed and referenced by digest rather than mutable server state.

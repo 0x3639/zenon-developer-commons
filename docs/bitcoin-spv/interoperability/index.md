@@ -28,6 +28,6 @@ The dual-ledger architecture is structurally compatible with:
 
 ## Documents in This Section
 
-- [Bitcoin SPV Feasibility](/bitcoin-spv/feasibility) — Why Bitcoin transaction verification via SPV is cryptographically possible within Zenon's ledger model. Covers PoW headers, chainwork, Merkle proofs, and confirmation security.
+- [Bitcoin SPV Feasibility](/bitcoin-spv/interoperability/feasibility) — Why Bitcoin transaction verification via SPV is cryptographically possible within Zenon's ledger model. Covers PoW headers, chainwork, Merkle proofs, and confirmation security.
 
-- [HTLCs, PTLCs, and Bounded Inclusion](/bitcoin-spv/htlc-ptlc-bounded-inclusion) — How familiar primitives like HTLCs and PTLCs relate to bounded inclusion. Clarifies that bounded verification is a generalization of patterns already proven successful.
+- [HTLCs, PTLCs, and Bounded Inclusion](/bitcoin-spv/interoperability/htlc-ptlc-bounded-inclusion) — How familiar primitives like HTLCs and PTLCs relate to bounded inclusion. Clarifies that bounded verification is a generalization of patterns already proven successful.

@@ -28,16 +28,16 @@ This aligns naturally with SPV-style verification, making browser native and mob
 
 ## Documents in This Section
 
-- [Momentum Header Verification](/architecture/momentum-header-verification) — How light nodes verify chain progress: Pillar eligibility, chain continuity, and account-chain finality using only headers.
+- [Momentum Header Verification](/light-clients/momentum-header-verification) — How light nodes verify chain progress: Pillar eligibility, chain continuity, and account-chain finality using only headers.
 
-- [SPV Light Verification](spv-light-verification.md) — Exploration of SPV-style verification for Zenon. Covers header verification, proof acceptance, and minimal state maintenance.
+- [SPV Light Verification](/light-clients/spv-light-verification/) — Exploration of SPV-style verification for Zenon. Covers header verification, proof acceptance, and minimal state maintenance.
 
-- [SPV Light Verification (Extended)](/light-clients/spv-light-verification-extended) — Extended notes on SPV patterns and implementation considerations.
+- [SPV Light Verification (Extended)](/light-clients/spv-light-verification/extended) — Extended notes on SPV patterns and implementation considerations.
 
-- [State Proof Bundles](/architecture/state-proof-bundles) — Compact verification primitive for account-chain transitions. Explains why Merkle proofs aren't needed in the dual-ledger model.
+- [State Proof Bundles](/light-clients/state-proof-bundles) — Compact verification primitive for account-chain transitions. Explains why Merkle proofs aren't needed in the dual-ledger model.
 
-- [Browser Light Client](browser-light-client.md) — Early notes on minimal browser client: header sync, local signing, micro PoW generation, and transaction relay.
+- [Browser Light Client](/light-clients/browser-light-client/) — Early notes on minimal browser client: header sync, local signing, micro PoW generation, and transaction relay.
 
-- [Browser Light Client Architecture](browser-light-client-architecture.md) — Comprehensive research on browsers as verifiable peers. Covers verification responsibilities, networking, and state reconstruction.
+- [Browser Light Client Architecture](/light-clients/browser-light-client/architecture) — Comprehensive research on browsers as verifiable peers. Covers verification responsibilities, networking, and state reconstruction.
 
-- [Browser Light Client (Extended)](/light-clients/browser-light-client-extended) — Extended drafts and deeper exploration of browser client design.
+- [Browser Light Client (Extended)](/light-clients/browser-light-client/extended) — Extended drafts and deeper exploration of browser client design.

@@ -1,5 +1,9 @@
 # Composable External Verification Bitcoin & Beyond as Verifiable Inputs Under Bounded Resources
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/greenpaper-series/0x02-composable-external-verification.pdf).
+:::
+
 Purpose: Define a composable model for verifying external facts (starting with Bitcoin) inside a bounded verifier environment, without turning any system into a full cross-chain execution engine.
 
 Non-goal: This is not a bridge product specification, not a custody claim, not a guarantee of canonical history, and not a promise that any particular chain feature exists today.
@@ -35,7 +39,7 @@ Examples: Bitcoin, other PoW chains, checkpointed ledgers, signed transparency l
 A statement about X that can be represented as a predicate:
 
 $$
-\phi_ {\mathsf {X}} (\pi , z) \in \{0, 1 \}
+\phi_ {\mathsf{X}} (\pi , z) \in \{0, 1 \}
 $$
 
 Where:
@@ -111,7 +115,7 @@ Proof bundle  $\pi$  contains:
 Verification predicate:
 
 $$
-\phi_ {\mathrm {B T C}} (\pi , z) = \text {V a l i d H e a d e r s} (\mathrm {H}) \wedge \text {V a l i d P o W} (\mathrm {H}) \wedge \text {I n c l u s i o n} (\mathrm {t}, \mathrm {p}, \text {m e r k l e R o o t} (\mathrm {B})) \wedge \text {D e p t h} (\mathrm {B}, \text {t i p}) \geq \mathrm {d}
+\phi_ {\mathrm{BTC}} (\pi , z) = \text{ValidHeaders} (\mathrm{H}) \wedge \text{ValidPoW} (\mathrm{H}) \wedge \text{Inclusion} (\mathrm{t}, \mathrm{p}, \text{merkleRoot} (\mathrm{B})) \wedge \text{Depth} (\mathrm{B}, \text{tip}) \geq \mathrm{d}
 $$
 
 5.2 What This Proves (and What It Doesn't)
@@ -145,7 +149,7 @@ Instead of "trust this oracle value," CEV encourages:
 This yields a verifiable oracle pattern:
 
 $$
-\operatorname {A c c e p t} (s) \Leftarrow \operatorname {S i g V a l i d} (s) \wedge \phi_ {X} (\pi , z)
+\operatorname{Accept} (s) \Leftarrow \operatorname{SigValid} (s) \wedge \phi_ {X} (\pi , z)
 $$
 
 This is still not "truth," but it upgrades oracle integrity from "trust me" to "prove your provenance." Unlike committee-based oracles that rely on honest-majority assumptions, this pattern allows any observer to independently verify the attestation chain.
@@ -391,7 +395,7 @@ h _ {0} = t
 $$
 
 $$
-h _ {i + 1} = H \left(h _ {j} \mid \mid p _ {i}\right) \text {o r} H \left(p _ {j} \mid \mid h _ {i}\right) \text {d e p e n d i n g o n p o s i t i o n}
+h _ {i + 1} = H \left(h _ {j} \mid \mid p _ {i}\right) \text{or} H \left(p _ {j} \mid \mid h _ {i}\right) \text{dependingonposition}
 $$
 
 Accept inclusion if:

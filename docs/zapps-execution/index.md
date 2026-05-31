@@ -31,6 +31,6 @@ This enables:
 
 - [zApps Draft Notes](/zapps-execution/zapps) — How application logic runs locally, remains deterministic, and anchors verifiable results to the dual-ledger. Covers the minimal workflow from local execution to Momentum finalization.
 
-- [zApps Draft Notes (Extended)](/zapps-execution/zapps-extended) — Extended drafts and deeper exploration of the zApp execution model.
+- [zApps Draft Notes (Extended)](/zapps-execution/zapps/extended) — Extended drafts and deeper exploration of the zApp execution model.
 
 - [Dynamic Plasma](/zapps-execution/dynamic-plasma) — Adaptive mechanism for regulating resource consumption. Explains how plasma difficulty adjusts to state growth while preserving a feeless user experience.

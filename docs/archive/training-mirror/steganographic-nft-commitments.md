@@ -6,5 +6,5 @@ This document presents research comparing steganographic NFT approaches with pro
 
 ## Download
 
-<a href="steganographic_nft_vs_protocol_commitments.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/steganographic-nft-commitments.pdf)
 

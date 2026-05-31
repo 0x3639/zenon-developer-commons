@@ -22,17 +22,16 @@ A path from "how does this work?" to "how would I build on it?" — architecture
 
 ## 2. The building blocks
 
-- [Account-Chain Commitments](/architecture/account-chain-commitments) and [Momentum Data Fields](/architecture/momentum-data-fields)
-- [Node Architecture](/architecture/node-architecture) — Pillars, Sentinels, Sentries, light clients.
-- [Sentinels](/architecture/sentinels/) — the proof-serving layer (provenance-tagged context pack).
-- [State Proof Bundles](/architecture/state-proof-bundles) and the [Execution Model](/architecture/execution-model).
+- [Account-Chain Commitments](/architecture/data-structures/account-chain-commitments) and [Momentum Data Fields](/architecture/data-structures/momentum-data-fields)
+- [Node Architecture](/architecture/node-architecture) — Pillars, Sentinels, Sentries, light clients (incl. the Sentinel middle and finalization layers).
+- [State Proof Bundles](/light-clients/state-proof-bundles) and the [Execution Model](/zapps-execution).
 
 ---
 
 ## 3. Light clients & verification
 
 - [Browser Light Client — Overview](/light-clients/overview)
-- [Browser Light Client — Architecture](/light-clients/browser-light-client-architecture)
+- [Browser Light Client — Architecture](/light-clients/browser-light-client/architecture)
 - [SPV-style Light Verification](/light-clients/spv-light-verification)
 
 ---
@@ -57,5 +56,5 @@ A path from "how does this work?" to "how would I build on it?" — architecture
 ## Where to go next
 
 - Want the formal proofs and hostile reviews? → **[For Researchers](/for-researchers)**
-- Want the motivating story? → **[For Enthusiasts](/for-enthusiasts)**
+- Want the motivating story? → **[Learn the Basics](/learn)**
 - Every paper as a downloadable PDF → the [Papers catalog](/papers).

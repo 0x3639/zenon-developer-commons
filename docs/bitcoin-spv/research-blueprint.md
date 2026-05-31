@@ -4,9 +4,9 @@ This document provides a comprehensive research blueprint for implementing Bitco
 
 ## Download
 
-<a href="bitcoin_spv_zenon_research.pdf" target="_blank">Download the full research blueprint (PDF)</a>
+[Download the full research blueprint (PDF)](/pdf/research/bitcoin-spv-zenon-research.pdf)
 
 ## Related Documents
 
-- [Bitcoin SPV Feasibility Notes](/bitcoin-spv/feasibility)
+- [Bitcoin SPV Feasibility Notes](/bitcoin-spv/interoperability/feasibility)
 - [Engineering Roadmap: Bitcoin SPV](/bitcoin-spv/engineering-roadmap)

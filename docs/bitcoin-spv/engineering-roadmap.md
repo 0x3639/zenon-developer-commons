@@ -44,7 +44,7 @@ The engineering path adheres to four binding constraints:
 We define the statement to be verified as:
 
 $$
-S(tx, z) := \text{“Bitcoin transaction } tx \text{ is included in the canonical Bitcoin chain and buried under } z \text{ blocks.”}
+S(tx, z) := \text{“Bitcointransaction } tx \text{ isincludedinthecanonicalBitcoinchainandburiedunder } z \text{ blocks.”}
 $$
 
 For clarity, the *canonical Bitcoin chain* is defined as the valid header chain with **maximal cumulative proof-of-work**, as determined by standard Bitcoin consensus rules.

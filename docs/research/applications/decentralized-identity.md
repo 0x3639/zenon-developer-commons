@@ -1,5 +1,9 @@
 # Decentralized Identity with Deterministic Key Rotation
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/decentralized-identity.pdf).
+:::
+
 A Proof-First Identity Model for Dual-Ledger Architectures with Formal Security Analysis and Impossibility Results
 
 Research Paper — Enhanced Version December 23, 2025
@@ -106,7 +110,7 @@ System performance under varying network conditions: WiFi/5G achieves full perfo
 
 # 6.1 Formalization of Identity-as-Frontier
 
-Definition: Identity Frontier Function - For account-chain  $B = (B_{-}0, B_{-}1, \dots, B_{-}n)$  anchored up to momentum  $M_{-}m$ , the identity frontier function is  $\text{Phi(alpha, m)} = \{B_{-}i \text{ in } B : B_{-}i \text{ anchored in } M_{-}j, j \text{ less than or equal to } m, \text{ for all } B_{-}k \text{ in } B : k \text{ less than } i \text{ OR } B_{-}k \text{ not anchored in } M \text{ up to } m\}$ .
+Definition: Identity Frontier Function - For account-chain  $B = (B_{-}0, B_{-}1, \dots, B_{-}n)$  anchored up to momentum  $M_{-}m$ , the identity frontier function is  $\text{Phi(alpha, m)} = \{B_{-}i \text{ in } B : B_{-}i \text{ anchoredin } M_{-}j, j \text{ lessthanorequalto } m, \text{ forall } B_{-}k \text{ in } B : k \text{ lessthan } i \text{ OR } B_{-}k \text{ notanchoredin } M \text{ upto } m\}$ .
 
 Theorem 4: Frontier Uniqueness - For any identity alpha and momentum height m, |Phi(alpha, m)| less than or equal to 1 (frontier is unique or empty). Proof: By properties P1.1 (linear history) and P2.1 (total ordering). If |Phi(alpha, m)| greater than 1, then exists B_i, B_j both in Phi(alpha, m) with i not equal to j. Without loss of generality assume i less than j. By P1.1, B_jprevious_hash = H(B_{j-1})), so B_i is ancestor of B_j. By P2.1, both anchored in M up to m. But then B_i is not maximal (B_j greater than B_i), contradicting definition of Phi. QED.
 

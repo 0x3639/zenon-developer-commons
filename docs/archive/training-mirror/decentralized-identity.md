@@ -6,7 +6,7 @@ This document presents research on decentralized identity systems for the Zenon 
 
 ## Download
 
-<a href="01_decentralized_identity_final.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/decentralized-identity.pdf)
 
 ---
 

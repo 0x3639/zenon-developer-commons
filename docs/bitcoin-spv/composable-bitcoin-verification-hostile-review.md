@@ -1,5 +1,9 @@
 # Hostile Technical Review (Revised Submission)
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/composable-bitcoin-verification-hostile-review.pdf).
+:::
+
 Composable Bitcoin Verification for Genesis-Anchored Light Clients
 
 Review Type: Adversarial Follow-Up
@@ -96,7 +100,7 @@ The severity ranking (STRONG/MODERATE/WEAK) is particularly valuable. It helps r
 
 # Remaining Issue
 
-■ Moderate: The comparison table shows this system is weaker than Bitcoin native verification, but doesn't quantify how much weaker.
+\blacksquare Moderate: The comparison table shows this system is weaker than Bitcoin native verification, but doesn't quantify how much weaker.
 
 A hostile reviewer will ask:
 
@@ -128,7 +132,7 @@ A hostile reviewer cannot accuse the authors of assumption laundering. The depen
 
 # Suggestion for Camera-Ready
 
-■ Optional improvement: The footnote could reference where such anchoring proofs might be found or published, if available. For example:
+\blacksquare Optional improvement: The footnote could reference where such anchoring proofs might be found or published, if available. For example:
 
 "Genesis anchoring validation for [Network Name] can be independently verified at [URL] or via [Method]."
 

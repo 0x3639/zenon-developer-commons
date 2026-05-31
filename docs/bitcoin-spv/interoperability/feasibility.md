@@ -65,7 +65,7 @@ x_0 = h
 \]
 
 \[
-x_j = H(x_{j-1} \| s_j) \;\; \text{(ordering per position)}
+x_j = H(x_{j-1} \| s_j) \;\; \text{(orderingperposition)}
 \]
 
 Inclusion holds iff:

@@ -1,5 +1,9 @@
 # Cryptographic Property Rights: Blockchain-Based Verification for Real Estate Ownership and Corporate Asset Auditing
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/real-estate-asset-auditing.pdf).
+:::
+
 Anonymous Researcher December 2025
 
 # Abstract
@@ -60,7 +64,7 @@ Zero-Knowledge Proofs (Prove, Verify): zk-SNARKs (Groth16 or PLONK) enabling suc
 
 # 3.1 Property Identifiers
 
-Definition 3.1 (Property Identifier): A globally unique property identifier PID is constructed as:  $\text{PID} = \text{H}(\text{country_code} || \text{admin_region} || \text{parcel_id} || \text{coordinates} || \text{legal_description})$  where  $\text{H}$  is collision-resistant hash function. This ensures uniqueness across all jurisdictions with probability 1 -  $\text{negl}(\lambda)$ .
+Definition 3.1 (Property Identifier): A globally unique property identifier PID is constructed as:  $\text{PID} = \text{H}(\text{country\_code} || \text{admin\_region} || \text{parcel\_id} || \text{coordinates} || \text{legal\_description})$  where  $\text{H}$  is collision-resistant hash function. This ensures uniqueness across all jurisdictions with probability 1 -  $\text{negl}(\lambda)$ .
 
 # 3.2 Property Account-Chain Structure
 
@@ -86,7 +90,7 @@ A critical advantage of dual-ledger architecture is enabling O(portfolio_size) v
 
 Theorem 4.1 (Bounded Verification): An auditor verifying corporation C owns properties  $\{P_1, \dots, P_N\}$  can verify all ownership claims with computational complexity  $O(N \times \log M + N \times T_{\text{verify}})$  where  $M =$  total Momentum blocks,  $T_{\text{verify}} =$  per-block verification time, and complexity is INDEPENDENT of total properties in global system.
 
-Proof: Auditor downloads N property account-chains  $\mathsf{PAC}_{\mathsf{P}}$ . For each chain with  $n_i$  blocks: (1) Verify signature chain:  $O(n_{i} \times T_{sig})$ , (2) Verify hash chain:  $O(n_{i} \times T_{hash})$ , (3) Verify Momentum inclusion via Merkle proofs:  $O(n_{i} \times \log M)$ . Total:  $O(\Sigma n_{i} \times (T_{sig} + T_{hash} + \log M)) = O(N \times \text{avg\_blocks} \times (T_{verify} + \log M))$ . Crucially, this does NOT depend on total property count in network. Contrast with Ethereum requiring O(global_state) processing.
+Proof: Auditor downloads N property account-chains  $\mathsf{PAC}_{\mathsf{P}}$ . For each chain with  $n_i$  blocks: (1) Verify signature chain:  $O(n_{i} \times T_{sig})$ , (2) Verify hash chain:  $O(n_{i} \times T_{hash})$ , (3) Verify Momentum inclusion via Merkle proofs:  $O(n_{i} \times \log M)$ . Total:  $O(\Sigma n_{i} \times (T_{sig} + T_{hash} + \log M)) = O(N \times \text{avg\\_blocks} \times (T_{verify} + \log M))$ . Crucially, this does NOT depend on total property count in network. Contrast with Ethereum requiring O(global_state) processing.
 
 <table><tr><td>System</td><td>Verification Complexity</td><td>Storage Required</td><td>Trust Assumptions</td></tr><tr><td>Traditional County</td><td>Omanual_travel)</td><td>Zero (trust county)</td><td>Full trust in recorder</td></tr><tr><td>Ethereum</td><td>O(global_state)</td><td>~800 GB full node</td><td>Trust RPC or run full node</td></tr><tr><td>Zenon (This Work)</td><td>O portfolio_size)</td><td>~10 MB for 10K properties</td><td>Cryptographic only</td></tr></table>
 
@@ -178,7 +182,7 @@ Attack Goals: Adversary seeks to: (a) Forge property ownership (claim to own pro
 
 Attack: Adversary attempts to add fraudulent transfer block claiming ownership of property P currently owned by victim V.
 
-Requirements for Success: Must produce valid block  $\mathsf{B} = (\text{prev\_hash}, \text{grantor} = \mathsf{V}, \text{grantee} = \text{Adversary}, \ldots, \sigma_{\mathsf{V}}, \sigma_{\text{Adversary}})$  where  $\sigma_{\mathsf{V}}$  verifies under V's public key  $\mathsf{pk}_{\mathsf{V}}$ . This requires one of:
+Requirements for Success: Must produce valid block  $\mathsf{B} = (\text{prev\\_hash}, \text{grantor} = \mathsf{V}, \text{grantee} = \text{Adversary}, \ldots, \sigma_{\mathsf{V}}, \sigma_{\text{Adversary}})$  where  $\sigma_{\mathsf{V}}$  verifies under V's public key  $\mathsf{pk}_{\mathsf{V}}$ . This requires one of:
 
 - Obtain V's private key  ${\mathrm{{sk}}}_{\mathrm{V}}$  (requires compromising V's key management - victim's responsibility)
 

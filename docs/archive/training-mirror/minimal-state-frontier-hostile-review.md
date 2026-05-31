@@ -4,7 +4,7 @@ This document provides a critical analysis and hostile review of the minimal sta
 
 ## Download
 
-<a href="minimal_state_frontier_hostile_review.pdf" target="_blank">Download the hostile review (PDF)</a>
+[Download the hostile review (PDF)](/pdf/research/minimal-state-frontier-hostile-review.pdf)
 
 ## Related Documents
 

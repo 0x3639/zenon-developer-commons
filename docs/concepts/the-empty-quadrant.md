@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # The Empty Quadrant
 ## An Architectural Analysis of Verification-First Blockchain Design
 
@@ -754,20 +758,20 @@ Let $S$ be a blockchain system.
 $S$ falsifies the "empty quadrant" claim if and only if:
 
 **Empirical threshold** ($\exists$ material economic activity):
-$$\text{TVL}(S) > 10^8 \text{ USD} \lor \text{DAU}(S) > 10^4 \lor \text{TXVolume}_{90d}(S) > 10^5 \text{ per day}$$
+$$\text{TVL}(S) > 10^8 \text{ USD} \lor \text{DAU}(S) > 10^4 \lor \text{TXVolume}_{90d}(S) > 10^5 \text{ perday}$$
 
 **Architectural criteria** (all four must hold):
-$$\text{CanonicalTruth}(S) = O(T) \land E(T) \text{ is optional}$$
+$$\text{CanonicalTruth}(S) = O(T) \land E(T) \text{ isoptional}$$
 $$\forall L \in \text{LightClients}(S): \text{Verify}(L, O(T)) \land \neg \text{RequiresExecution}(L)$$
-$$|M_S| = 1 \text{ (integrated security)}$$
+$$|M_S| = 1 \text{ (integratedsecurity)}$$
 
 **Functionality requirement**:
-$$\text{StateModel}(S) \text{ supports general-purpose computation}$$
+$$\text{StateModel}(S) \text{ supportsgeneral-purposecomputation}$$
 
 **Operational maturity**:
 $$\text{Uptime}(S) > 1 \text{ year} \land \text{ConsensusFailures}(S) = 0$$
 
-As of February 2026: $\{S : S \text{ satisfies all criteria}\} = \{\text{Zenon}\}$
+As of February 2026: $\{S : S \text{ satisfiesallcriteria}\} = \{\text{Zenon}\}$
 
 Discovery of $S' \neq \text{Zenon}$ satisfying all criteria would falsify the singularity claim.
 

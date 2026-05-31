@@ -75,8 +75,8 @@ The engineering path adheres to four binding constraints:
 This documentation builds upon:
 
 - [Engineering Roadmap — Bitcoin SPV on Zenon](/bitcoin-spv/engineering-roadmap) — The source roadmap
-- [Bitcoin SPV Feasibility](/bitcoin-spv/feasibility) — Cryptographic feasibility proof
-- [State Proof Bundles](/architecture/state-proof-bundles) — Verification primitive for cross-chain
+- [Bitcoin SPV Feasibility](/bitcoin-spv/interoperability/feasibility) — Cryptographic feasibility proof
+- [State Proof Bundles](/light-clients/state-proof-bundles) — Verification primitive for cross-chain
 - [Taxonomy: Deterministic Fact Acceptance](/research/taxonomy-deterministic-fact-acceptance) — Architectural model
 - [Bounded Verification Series](/research/bounded-verification/) — Verification techniques
 

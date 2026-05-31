@@ -383,6 +383,6 @@ Allow accounts to delegate verification authority.
 ## 13. References
 
 - [Bitcoin SPV Verifier Specification](../phase-0-foundation/bitcoin-spv-verifier-spec.md)
-- [State Proof Bundles](/architecture/state-proof-bundles)
+- [State Proof Bundles](/light-clients/state-proof-bundles)
 - [Taxonomy: Deterministic Fact Acceptance](/research/taxonomy-deterministic-fact-acceptance)
 - [Dynamic Plasma](/zapps-execution/dynamic-plasma)

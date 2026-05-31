@@ -16,11 +16,11 @@ type Persona = {
 
 const PERSONAS: Persona[] = [
   {
-    eyebrow: 'Enthusiast / Investor',
-    title: 'Understand the vision',
+    eyebrow: 'Learn the basics',
+    title: 'Understand the project',
     blurb:
       'Start with the narrative essays and plain-language overviews. Why Zenon verifies before it trusts, and what that unlocks.',
-    to: '/for-enthusiasts',
+    to: '/learn',
   },
   {
     eyebrow: 'Developer',
@@ -41,7 +41,7 @@ const PERSONAS: Persona[] = [
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}

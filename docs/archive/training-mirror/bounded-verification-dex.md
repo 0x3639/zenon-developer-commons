@@ -6,7 +6,7 @@ This document presents research on bounded verification approaches for decentral
 
 ## Download
 
-<a href="bounded_verification_for_dex_final.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/bounded-verification-dex.pdf)
 
 ---
 

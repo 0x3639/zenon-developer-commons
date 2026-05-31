@@ -1,7 +1,7 @@
 # ZENON: The Network of Momentum
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/lightpaper.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/lightpaper.pdf).
 :::
 
 Lightpaper

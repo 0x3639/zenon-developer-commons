@@ -1,7 +1,7 @@
 # Zenon Indigopaper Series
 
-:::tip Download
-📄 [Download the original PDF](/pdf/core/indigopaper.pdf)
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/core/indigopaper.pdf).
 :::
 
 Incentives and Coordination in a Verification-First Network
@@ -65,7 +65,7 @@ How can bounded verifiers acquire the proofs they need efficiently, without trus
 When a verifier cannot complete verification, it issues a Refusal Witness:
 
 $$
-w _ {R} = \left(\text {l a s t} \_ \text {h e a d e r}, \text {o b j e c t} \_ \text {i d}, \text {r e f u s a l} \_ \text {c o d e}, \text {b o u n d} \_ \text {d i m e n s i o n}, \text {m e t a d a t a}\right)
+w _ {R} = \left(\text{last} \_ \text{header}, \text{object} \_ \text{id}, \text{refusal} \_ \text{code}, \text{bound} \_ \text{dimension}, \text{metadata}\right)
 $$
 
 This witness is not a declaration of invalidity — it's a signed statement that the verifier reached its resource boundary. Other nodes can interpret these witnesses as structured demand indicators:
@@ -99,7 +99,7 @@ Let each verifier  $V_{i}$  operate under resource bounds  $R_{i} = (S_{i}, B_{i
 Verification succeeds if:
 
 $$
-\left| A - D _ {i} \right| = 0 \quad \text {a n d} \quad \operatorname {C o s t} _ {V} (A) \leq R _ {i}
+\left| A - D _ {i} \right| = 0 \quad \text{and} \quad \operatorname{Cost} _ {V} (A) \leq R _ {i}
 $$
 
 Otherwise,  $V_{i}$  emits  $w_{R}$ .
@@ -107,7 +107,7 @@ Otherwise,  $V_{i}$  emits  $w_{R}$ .
 The coordination goal is to minimize the global refusal probability:
 
 $$
-\min  \sum_ {i} \mathbb {P} \left(w _ {R} ^ {i}\right)
+\min  \sum_ {i} \mathbb{P} \left(w _ {R} ^ {i}\right)
 $$
 
 while preserving local correctness and zero-trust assumptions. (G2.5-G2.7)
@@ -408,7 +408,7 @@ An Ambient Relay Node  $A_{j}$  satisfies:
 Forwarding is permitted only when:
 
 $$
-\operatorname {C o s t} _ {A} (\text {f o r w a r d}) <   R _ {j} - \operatorname {R e s e r v e} _ {j}
+\operatorname{Cost} _ {A} (\text{forward}) <   R _ {j} - \operatorname{Reserve} _ {j}
 $$
 
 ensuring that forwarding never interferes with local verification duties. Each ARN thus contributes availability while staying within safe resource limits.
@@ -762,7 +762,7 @@ Every supervisor output is cryptographically verifiable. No correctness assumpti
 A hotset  $H$  represents a region of high verification demand:
 
 $$
-H = \left\{\left(b _ {i}, \rho_ {i}, \tau_ {i}\right) \mid \rho_ {i} = \text {R e f u s a l D e n s i t y} \left(b _ {i}, t \in \Delta T\right) \right\}
+H = \left\{\left(b _ {i}, \rho_ {i}, \tau_ {i}\right) \mid \rho_ {i} = \text{RefusalDensity} \left(b _ {i}, t \in \Delta T\right) \right\}
 $$
 
 where  $b_{i}$  is a proof bundle,  $\rho_{i}$  its refusal density, and  $\tau_{i}$  a timestamp window.

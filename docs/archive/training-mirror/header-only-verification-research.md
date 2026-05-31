@@ -4,7 +4,7 @@ This document presents research on header-only verification approaches for the Z
 
 ## Download
 
-<a href="header_only_verification_research_v3_final.pdf" target="_blank">Download the full research paper (PDF)</a>
+[Download the full research paper (PDF)](/pdf/research/header-only-verification.pdf)
 
 ## Related Documents
 

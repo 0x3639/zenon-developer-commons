@@ -1,5 +1,9 @@
 # Hostile Technical Review
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/minimal-state-frontier-hostile-review.pdf).
+:::
+
 # Minimal State Frontier Verification (Draft — Final Revision)
 
 Review Type: Adversarial Conference Peer Review
@@ -384,7 +388,7 @@ Why This Happens:  $k$  presented as "reorganization tolerance" (Section 7.1) su
 
 Consequence: Implementers choose arbitrary  $k$  values without understanding attack surface. Under-provisioned  $k$  leads to frequent false rejections; over-provisioned  $k$  wastes memory without benefit.
 
-Recommendation: Section 9 should clarify: " \( k \) is a memory efficiency parameter constrained by device capabilities. Security depends on chain-specific properties (finality, fork rate) and is NOT directly improved by increasing \( k \) beyond necessary retention." Provide principled guidance: \( k \) should be set to max(\text{finality\_depth}), \text{text{reorg\_history\_duration}}\)) + \text{text{safety\_margin}}\), not arbitrarily large.
+Recommendation: Section 9 should clarify: " \( k \) is a memory efficiency parameter constrained by device capabilities. Security depends on chain-specific properties (finality, fork rate) and is NOT directly improved by increasing \( k \) beyond necessary retention." Provide principled guidance: \( k \) should be set to max(\text{finality\\_depth}), \text{text{reorg\_history\_duration}}\)) + \text{text{safety\_margin}}\), not arbitrarily large.
 
 # 4. Boundary of Applicability
 

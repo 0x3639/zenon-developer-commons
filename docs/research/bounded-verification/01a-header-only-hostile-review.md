@@ -1,5 +1,9 @@
 # Adversarial Technical Review
 
+:::note Auto-converted from PDF
+This page was automatically converted from a PDF and may contain formatting artifacts (spacing, math, or list rendering). For the authoritative version, [download the original PDF](/pdf/research/header-only-verification-hostile-review.pdf).
+:::
+
 Header-Only Verification and the State Commitment Invariant (v3)
 
 A Deliberately Hostile Examination of Boundary Conditions

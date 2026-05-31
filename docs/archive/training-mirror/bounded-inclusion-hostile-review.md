@@ -4,7 +4,7 @@ This document provides a critical analysis and hostile review of the bounded inc
 
 ## Download
 
-<a href="bounded_inclusion_without_merkle_hostile_review.pdf" target="_blank">Download the hostile review (PDF)</a>
+[Download the hostile review (PDF)](/pdf/research/bounded-inclusion-hostile-review.pdf)
 
 ## Related Documents
 
